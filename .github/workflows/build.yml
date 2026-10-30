@@ -1,0 +1,125 @@
+# Automatischer Windows-Build für den StemTagger.
+#
+# Was passiert wann:
+# - Jeder Pull Request und jeder Push auf main baut StemTagger.exe auf einem
+#   Windows-Rechner von GitHub. Fehler im Quelltext fallen so sofort auf.
+# - Die Exe und das fertige ZIP für die Release-Seite landen nur als
+#   Workflow-Artefakt beim Build-Lauf (nur mit GitHub-Login, 14 Tage).
+#   Testversionen werden NICHT als Vor-Release veröffentlicht.
+# - Alte Vor-Releases mit Tag "test-..." löscht der Job "aufraeumen" bei jedem
+#   Push auf main und beim Schliessen eines PRs (falls es je welche gibt).
+#
+# Details: docs/TESTVERSIONEN.md
+
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+  workflow_dispatch:
+
+# Standard: nur lesen. Schreibrecht bekommt nur der Aufräum-Job.
+permissions:
+  contents: read
+
+# Pro Branch bzw. PR immer nur ein Lauf; ein neuer Push bricht den alten Lauf ab.
+concurrency:
+  group: build-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+env:
+  # Lazarus-Version für den Build (FPC 3.2.2 ist dabei)
+  LAZARUS_VERSION: "3.8"
+
+jobs:
+  build:
+    # Beim Schliessen eines PRs wird nicht gebaut, nur aufgeräumt
+    if: github.event.action != 'closed'
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      - name: Quelltext holen
+        uses: actions/checkout@v4
+
+      - name: Versionen prüfen
+        # APP_VER, Exe-Versionsinfo (.lpi), LIESMICH/README und CHANGELOG
+        # müssen dieselbe Version nennen
+        run: tools/versionen-pruefen.sh
+
+      - name: Sprachdateien prüfen
+        # lang-tools/i18n.py neu laufen lassen: die .po-Dateien im Repo müssen
+        # danach unverändert sein, und es darf keine Übersetzung fehlen
+        run: |
+          set -e
+          python lang-tools/i18n.py src src/lang | tee i18n.txt
+          if grep -q "FEHLT:\|FEHLER:" i18n.txt; then
+            echo "::error::Übersetzung fehlt, siehe oben"; exit 1
+          fi
+          git diff --exit-code -- src/lang || { echo "::error::src/lang ist nicht aktuell: python lang-tools/i18n.py src src/lang ausführen und einchecken"; exit 1; }
+
+      - name: Lazarus installieren
+        # Fremde Action: auf einen festen Commit gepinnt (= Tag v3.4.1), nicht auf
+        # "v3". Ein Tag kann der Autor jederzeit verschieben. Neue Version:
+        # Commit-SHA des Tags nachschlagen und hier eintragen.
+        uses: gcarreno/setup-lazarus@3ee9d77e0c771b37c1069f218cb68bd5ce7c30fe # v3.4.1
+        with:
+          lazarus-version: ${{ env.LAZARUS_VERSION }}
+          with-cache: false
+
+      - name: Exe bauen
+        # -B = alle Units neu übersetzen (kein alter Stand aus einem Cache)
+        run: lazbuild -B --os=win64 --cpu=x86_64 --ws=win32 src/StemTagger.lpi
+
+      - name: Exe verkleinern, ZIP bauen, Prüfsummen bilden
+        run: |
+          set -e
+          mkdir -p ausgabe
+          cp bin/StemTagger.exe ausgabe/
+
+          # Debug-Infos entfernen. strip.exe liegt bei FPC dabei.
+          STRIP=$(find /c/lazarus -iname strip.exe 2>/dev/null | head -n 1 || true)
+          if [ -z "$STRIP" ]; then STRIP=$(command -v strip || true); fi
+          if [ -n "$STRIP" ]; then
+            echo "strip: $STRIP"
+            "$STRIP" ausgabe/StemTagger.exe
+          else
+            echo "::warning::strip.exe nicht gefunden, Exe bleibt gross"
+          fi
+
+          bash tools/release-zip.sh ausgabe/StemTagger.exe ausgabe
+          cd ausgabe
+          sha256sum StemTagger.exe StemTagger-*.zip > SHA256SUMS.txt
+          cat SHA256SUMS.txt
+          ls -l
+
+      - name: Exe und ZIP als Workflow-Artefakt ablegen
+        uses: actions/upload-artifact@v4
+        with:
+          name: StemTagger-Win64-${{ github.sha }}
+          path: ausgabe/
+          retention-days: 14
+
+  aufraeumen:
+    # Alte Test-Vor-Releases (Tags "test-...") entfernen. Offizielle Releases
+    # sind keine Vor-Releases und beginnen nicht mit "test-", bleiben also stehen.
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.head.repo.full_name == github.repository)
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Test-Vor-Releases löschen
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          gh release list --repo "$REPO" --limit 200 --json tagName,isPrerelease \
+            --jq '.[] | select(.isPrerelease and (.tagName | startswith("test-"))) | .tagName' |
+          while read -r TAG; do
+            echo "Lösche $TAG"
+            gh release delete "$TAG" --cleanup-tag --yes --repo "$REPO" || true
+          done

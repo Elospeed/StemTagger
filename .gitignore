@@ -1,0 +1,22 @@
+# Build-Ergebnisse (Lazarus / Free Pascal) - nie einchecken
+bin/
+lib/
+backup/
+ausgabe/
+*.exe
+*.o
+*.ppu
+*.compiled
+*.res
+*.lps
+*.dbg
+*.zip
+
+# Benutzerdaten neben der Exe
+StemTagger.ini
+logs/
+
+# Sonstiges
+.DS_Store
+Thumbs.db
+__pycache__/
