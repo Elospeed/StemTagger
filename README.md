@@ -1,4 +1,4 @@
-# Elospeed StemTagger 1.1
+# Elospeed StemTagger 1.2
 
 **by Elospeed**
 
@@ -19,7 +19,7 @@ StemTagger is part of the [Elospeed StemMaker](https://github.com/Elospeed/StemM
 - **Missing data at a glance:** the Status column shows "No tags" or "No cover"; click a column header to sort.
 - **Artist/title from file name:** `Kungs - Clap Your Hands.stem.mp4` gives artist and title.
 - Optional backup copy `<file>.bak` before the first save.
-- German, English and Spanish.
+- German, English and Spanish; since 1.2 also French, Portuguese (Brazil), Italian, Japanese, Dutch and Polish (machine drafts, not yet proofread by native speakers).
 
 BPM and key are detected by Traktor and Mixxx during analysis; values that are already in the file are kept.
 

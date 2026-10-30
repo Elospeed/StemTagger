@@ -1,4 +1,4 @@
-Elospeed StemTagger 1.1.0  -  by Elospeed  (ko-fi.com/elospeed)
+Elospeed StemTagger 1.2.0  -  by Elospeed  (ko-fi.com/elospeed)
 ================================================================
 
 Sets title, artist, album, genre, year, label, comment and cover art in
@@ -18,8 +18,10 @@ INSTALLATION
   StemMaker already includes the StemTagger (AddOns\StemTagger.exe, button
   in the AddOns bar). Without StemMaker: unzip StemTagger-<version>.zip
   from the release page and start StemTagger.exe; keep the lang\ folder
-  next to it. The language (German, English, Spanish) is taken from the
-  StemMaker settings, otherwise from the Windows language.
+  next to it. The language is taken from the StemMaker settings,
+  otherwise from the Windows language (German, English, Spanish, French,
+  Portuguese, Italian, Japanese, Dutch, Polish; any other language gets
+  English).
 
 USAGE
   - Drag stem files or whole folders onto the window

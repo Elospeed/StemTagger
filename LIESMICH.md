@@ -1,4 +1,4 @@
-# Elospeed StemTagger 1.1
+# Elospeed StemTagger 1.2
 
 **von Elospeed**
 
@@ -19,7 +19,7 @@ Der StemTagger gehört zur Familie von [Elospeed StemMaker](https://github.com/E
 - **Fehlendes auf einen Blick:** Die Spalte Status zeigt „Ohne Tags“ oder „Ohne Cover“, Klick auf eine Spaltenüberschrift sortiert.
 - **Interpret/Titel aus Dateiname:** `Kungs - Clap Your Hands.stem.mp4` ergibt Interpret und Titel.
 - Auf Wunsch Sicherungskopie `<Datei>.bak` vor dem ersten Speichern.
-- Deutsch, Englisch und Spanisch.
+- Deutsch, Englisch und Spanisch; ab 1.2 auch Französisch, Portugiesisch (Brasilien), Italienisch, Japanisch, Niederländisch und Polnisch (maschinelle Entwürfe, noch nicht von Muttersprachlern gegengelesen).
 
 BPM und Tonart ermitteln Traktor und Mixxx beim Analysieren selbst; Werte, die schon in der Datei stehen, bleiben erhalten.
 

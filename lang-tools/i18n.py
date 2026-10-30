@@ -158,7 +158,9 @@ def main():
         missing = [k for k in keys if not tr.get(k)]
         unused = [k for k in tr if k not in found]
         with open(os.path.join(lang_dir, code + '.po'), 'w', encoding='utf-8') as f:
-            f.write(HEADER.format(lang=code))
+            # Poedit erwartet z.B. "pt_BR" (Dateiname bleibt klein: pt_br.po)
+            lang = code if '_' not in code else code.split('_')[0] + '_' + code.split('_')[1].upper()
+            f.write(HEADER.format(lang=lang))
             for k in keys:
                 f.write('#: ' + ' '.join(found[k][:3]) + '\n')
                 f.write('msgid ' + po_escape(k) + '\nmsgstr ' + po_escape(tr.get(k, '')) + '\n\n')
