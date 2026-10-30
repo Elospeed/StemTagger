@@ -38,7 +38,8 @@
     1.0.1 (30.10.2026)  eigenes Repository Elospeed/StemTagger
     1.1.0 (30.10.2026)  MP3-Dateien (ID3v2, eigener Code in uid3tags.pas);
                        Traktors Daten in der MP3 (PRIV/GEOB "TRAKTOR4") und
-                       alle unbekannten Frames bleiben erhalten
+                       alle unbekannten Frames bleiben erhalten;
+                       Spalte "Traktor" zeigt, welche MP3s Traktor-Daten haben
   ============================================================================ }
 unit taggerform;
 
@@ -88,7 +89,7 @@ type
     FChkBackup, FChkShrink: TDJLedSwitch; // Schalter mit LED: Down = eingeschaltet
     { eigene Kopfzeile der Liste (die Windows-Kopfzeile wäre hell) }
     FHead      : TPaintBox;
-    FColW      : array[0..6] of Integer;  // Spaltenbreiten in Pixeln, die letzte füllt den Rest
+    FColW      : array[0..7] of Integer;  // Spaltenbreiten in Pixeln, die letzte füllt den Rest
     FDragCol   : Integer;          // Spalte, deren rechter Rand gerade gezogen wird, -1 = keine
     FDragX0, FDragW0: Integer;     // Maus und Breite beim Beginn des Ziehens
     FDragged   : Boolean;          // wirklich gezogen (dann kein Sortieren)
@@ -454,7 +455,7 @@ const
      tfAlbumArtist, tfTrack, tfBpm, tfKey);
   ROW_H = 28;
   { Spalten der Liste: Überschrift und Breite (96 dpi) }
-  COL_W: array[0..6] of Integer = (190, 130, 115, 95, 85, 50, 140);
+  COL_W: array[0..7] of Integer = (190, 130, 115, 95, 85, 50, 60, 140);
 var
   Shown: array of TMp4TagField;
   Half: Integer;
@@ -467,7 +468,7 @@ var
   Lbl: TLabel;
   F: TMp4TagField;
   I, X: Integer;
-  ColCaps: array[0..6] of string;
+  ColCaps: array[0..7] of string;
 
   procedure AddField(AField: TMp4TagField; AX, AY: Integer);
   begin
@@ -740,7 +741,7 @@ begin
 
   ColCaps[0] := _('Datei');  ColCaps[1] := _('Titel'); ColCaps[2] := _('Interpret');
   ColCaps[3] := _('Album');  ColCaps[4] := _('Genre'); ColCaps[5] := _('Cover');
-  ColCaps[6] := _('Status');
+  ColCaps[6] := _('Traktor');  ColCaps[7] := _('Status');
   PnlHead := MakeArea(PnlList);
   PnlHead.Align := alTop;
   PnlHead.Height := Scale96ToForm(24);
@@ -1134,12 +1135,13 @@ begin
       FFolderHint := Ini.ReadBool('Optionen', 'OrdnerHinweis', True);
       FChkShrink.Down := Ini.ReadBool('Optionen', 'CoverVerkleinern', True);
       FLastDir := Ini.ReadString('Optionen', 'LetzterOrdner', '');
-      { Spaltenbreiten (bei 96 dpi), z.B. "190,130,115,95,85,50" }
+      { Spaltenbreiten (bei 96 dpi), z.B. "190,130,115,95,85,50,60";
+        bis 1.0.1 waren es 6 Werte (ohne Spalte Traktor), die gelten weiter }
       Parts := TStringList.Create;
       try
         Parts.CommaText := Ini.ReadString('Ansicht', 'Spalten', '');
-        if Parts.Count = High(FColW) then
-          for I := 0 to High(FColW) - 1 do
+        if (Parts.Count = High(FColW)) or (Parts.Count = High(FColW) - 1) then
+          for I := 0 to Parts.Count - 1 do
           begin
             W := StrToIntDef(Parts[I], 0);
             if (W >= 40) and (W <= 1000) then
@@ -1333,6 +1335,14 @@ begin
     Item.SubItems.Add(_('ja'))
   else
     Item.SubItems.Add('-');
+  { Spalte Traktor: hat Traktor schon Cue-Punkte, Beatgrid usw. in die MP3
+    geschrieben? Bei Stem-Dateien bleibt sie leer (dort nicht geprüft). }
+  if E.IsMp3 and E.Mp3.HasTraktor then
+    Item.SubItems.Add(_('ja'))
+  else if E.IsMp3 then
+    Item.SubItems.Add('-')
+  else
+    Item.SubItems.Add('');
   if E.Dirty <> [] then
     St := '* ' + _('geändert')
   else if E.Status <> '' then

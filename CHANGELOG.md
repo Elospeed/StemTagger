@@ -13,6 +13,7 @@ Bis Version 1.0.1 wurde der StemTagger als AddOn im Repository [Elospeed/StemMak
 ### Neu
 - **MP3-Dateien:** MP3s lassen sich wie Stem-Dateien laden (auch beim Durchsuchen von Ordnern) und bekommen dieselben Felder: Titel, Interpret, Album, Album-Interpret, Genre, Jahr, Track-Nr., BPM, Tonart, Label, Kommentar und Cover.
 - **Traktors Daten bleiben erhalten:** Der StemTagger hat eigenen Code für ID3v2 und ersetzt nur die Einträge der geänderten Felder. Traktors eigener Eintrag (`PRIV` bzw. bei älteren Versionen `GEOB` „TRAKTOR4“ mit Beatgrid, Cue-Punkten, Loops und Analyse), weitere Bilder und alle anderen unbekannten Einträge bleiben Byte für Byte gleich, die Audiodaten sowieso. Vor dem Ersetzen prüft der StemTagger die neue Datei.
+- **Spalte „Traktor“:** zeigt in der Dateiliste auf einen Blick, welche MP3s schon Traktor-Daten (Cue-Punkte, Beatgrid, Analyse) enthalten („ja“) und welche nicht („-“). Wie jede Spalte sortierbar.
 - **Status für MP3:** „MP3 OK, mit Traktor-Daten“ zeigt, welche Dateien Traktor schon analysiert hat. Sehr alte (ID3v2.2) oder beschädigte Tags werden angezeigt, aber nicht verändert („Nur lesen“).
 - Geschrieben wird in der ID3-Version der Datei (2.3 oder 2.4); MP3s ohne Tags bekommen ID3v2.3. Fehlt ein Feld im ID3v2-Tag, zeigt der StemTagger den Wert aus einem alten ID3v1-Tag an.
 

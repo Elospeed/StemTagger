@@ -66,8 +66,9 @@ MP3-DATEIEN (ab 1.1)
   am Anfang der Datei. Geändert werden nur die Einträge der geänderten
   Felder. Die Audiodaten und alles andere im Block bleiben Byte für Byte
   gleich, besonders Traktors eigene Daten (Beatgrid, Cue-Punkte, Analyse
-  im Eintrag "TRAKTOR4"). Die Spalte Status zeigt "MP3 OK, mit
-  Traktor-Daten", wenn Traktor die Datei schon analysiert hat.
+  im Eintrag "TRAKTOR4"). Hat Traktor die Datei schon analysiert,
+  zeigt die Spalte Traktor "ja" und die Spalte Status "MP3 OK, mit
+  Traktor-Daten".
   Geschrieben wird in der ID3-Version, die schon in der Datei steht
   (2.3 oder 2.4); MP3s ohne Tags bekommen ID3v2.3. Sehr alte Tags
   (ID3v2.2) und beschädigte Tags werden nur angezeigt, nicht geändert.

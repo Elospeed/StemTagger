@@ -63,8 +63,9 @@ MP3 FILES (since 1.1)
   file. Only the entries of the changed fields are replaced. The audio
   data and everything else in the block stay byte for byte the same,
   especially Traktor's own data (beatgrid, cue points, analysis in the
-  "TRAKTOR4" entry). The Status column shows "MP3 OK, with Traktor data"
-  when Traktor has already analysed the file. StemTagger writes the ID3
+  "TRAKTOR4" entry). When Traktor has already analysed the file, the
+  Traktor column shows "yes" and the Status column "MP3 OK, with
+  Traktor data". StemTagger writes the ID3
   version that is already in the file (2.3 or 2.4); MP3s without tags get
   ID3v2.3. Very old tags (ID3v2.2) and damaged tags are shown but not
   changed. An old ID3v1 tag at the end of the file is left as it is.
