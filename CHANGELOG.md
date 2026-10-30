@@ -17,6 +17,7 @@ Bis Version 1.0.1 wurde der StemTagger als AddOn im Repository [Elospeed/StemMak
 - Geschrieben wird in der ID3-Version der Datei (2.3 oder 2.4); MP3s ohne Tags bekommen ID3v2.3. Fehlt ein Feld im ID3v2-Tag, zeigt der StemTagger den Wert aus einem alten ID3v1-Tag an.
 
 ### Entwicklung
+- Praxistest mit Traktor Pro 4: MP3 mit Cue-Punkten, Markern und Loop getaggt (Titel, Interpret, Album, Cover u. a.), danach als neue Datei in Traktor geladen: alles noch da.
 - Selbsttest `tests/Id3Test.lpr` (ID3v2.3, ID3v2.4, Unsynchronisation, ID3v1, Traktor-Eintrag), läuft bei jedem Build.
 
 ## 1.0.1 – eigenes Repository (30. Oktober 2026)
