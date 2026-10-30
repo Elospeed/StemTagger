@@ -5,6 +5,10 @@
 Bugs, Lehren und Stolperfallen, neueste oben. Was für Benutzer neu ist, steht im [CHANGELOG](../CHANGELOG.md).
 Ältere Einträge zum StemTagger (bis 1.0.1) stehen im Entwicklungslog von [Elospeed/StemMaker](https://github.com/Elospeed/StemMaker/blob/main/docs/ENTWICKLUNGSLOG.md).
 
+## Traktor speichert Cues in PRIV, nicht in GEOB (30. Oktober 2026)
+
+- Praxistest mit Traktor Pro: Cue-Punkte, Marker und Loop stehen in einem Frame `PRIV` mit Besitzer „TRAKTOR4“ (hier rund 80 KB), nicht im `GEOB`-Frame älterer Versionen. Der Frame blieb beim Speichern schon vorher Byte für Byte gleich (unbekannte Frames werden nie angefasst), aber der Status zeigte nur „MP3 OK“. `IsTraktorFrame` erkennt jetzt PRIV und GEOB; der Selbsttest hat dafür einen eigenen Fall (`v23-traktor-priv`).
+
 ## Umzug in ein eigenes Repository (30. Oktober 2026)
 
 - Der StemTagger brauchte aus StemMaker: den Tag-Teil von `ustemmp4.pas`, `djcontrols.pas` (StemPlayer), `ulang.pas`, `ustatusdraw.pas` und `uskalierung.pas`. Das sind jetzt **Kopien** in `src/`. Ändert sich eine davon in StemMaker (z. B. ein DPI-Fix in `uskalierung.pas`), muss sie hier von Hand nachgezogen werden und umgekehrt.

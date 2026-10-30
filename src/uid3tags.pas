@@ -8,8 +8,9 @@
 
   MP3-Dateien tragen ihre Tags (Titel, Interpret, Cover ...) in einem
   ID3v2-Block ganz am Anfang der Datei. Danach kommen die Audiodaten.
-  Traktor legt in denselben Block eigene Daten ab: einen Frame 'GEOB' mit
-  der Beschreibung "TRAKTOR4" (Beatgrid, Cue-Punkte, Analyse). Diese und
+  Traktor legt in denselben Block eigene Daten ab: einen Frame 'PRIV'
+  (neuere Versionen) oder 'GEOB' mit der Kennung "TRAKTOR4" (Beatgrid,
+  Cue-Punkte, Loops, Analyse). Diese und
   alle anderen Frames, die wir nicht kennen, müssen beim Speichern Byte für
   Byte erhalten bleiben. Darum gibt es hier eigenen Code statt einer
   Fremdbibliothek: wir ändern nur die Frames der Felder, die wirklich
@@ -42,7 +43,7 @@
 
   Immer über eine Zwischendatei: neuer ID3-Block + die Audiodaten 1:1.
   Danach wird die Zwischendatei geprüft: Audiodaten Byte für Byte gleich,
-  alle übernommenen Frames (z.B. Traktors GEOB) unverändert vorhanden und
+  alle übernommenen Frames (z.B. Traktors PRIV/GEOB) unverändert vorhanden und
   die geschriebenen Werte wieder lesbar. Erst dann ersetzt sie das
   Original (ReplaceFileSafe aus uMp4Tags). Ein ID3v1-Block am Dateiende
   (128 Byte 'TAG') gehört für uns zu den Audiodaten und bleibt, wie er ist.
@@ -65,7 +66,7 @@ type
   { Was über den ID3-Block einer MP3 bekannt ist (für die Statusspalte) }
   TMp3Info = record
     Id3Major  : Integer;   // 0 = kein ID3v2-Block, sonst 2, 3 oder 4
-    HasTraktor: Boolean;   // Traktor-Daten (GEOB "TRAKTOR4") vorhanden
+    HasTraktor: Boolean;   // Traktor-Daten (PRIV/GEOB "TRAKTOR4") vorhanden
     CanWrite  : Boolean;   // False bei ID3v2.2 oder beschädigtem Block
     Problem   : string;    // warum nicht geschrieben werden kann (deutsch)
   end;
@@ -578,7 +579,8 @@ begin
   Result := Length(Img) > 0;
 end;
 
-{ Enthält der Frame Traktors Daten? (GEOB mit Beschreibung "TRAKTOR4") }
+{ Enthält der Frame Traktors Daten? Traktor Pro 3/4 schreibt PRIV mit
+  Besitzer "TRAKTOR4", ältere Versionen GEOB mit Beschreibung "TRAKTOR4". }
 function IsTraktorFrame(const Fr: TId3Frame): Boolean;
 var
   I, J: SizeInt;
@@ -586,8 +588,8 @@ const
   KEY = 'TRAKTOR';
 begin
   Result := False;
-  if (Fr.ID <> 'GEOB') or (Length(Fr.Data) < Length(KEY)) then Exit;
-  { Die Beschreibung steht weit vorne; einfach in den ersten 64 Byte suchen }
+  if ((Fr.ID <> 'PRIV') and (Fr.ID <> 'GEOB')) or (Length(Fr.Data) < Length(KEY)) then Exit;
+  { Kennung bzw. Beschreibung steht weit vorne; einfach in den ersten 64 Byte suchen }
   for I := 0 to Min(64, Length(Fr.Data)) - Length(KEY) do
   begin
     J := 1;

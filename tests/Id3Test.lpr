@@ -2,10 +2,10 @@
   Id3Test  -  Selbsttest für uId3Tags (MP3-Tags lesen und schreiben)
 
   Baut kleine Test-MP3s im Speicher (ID3v2.3, ID3v2.4, ohne Tag, mit
-  Unsynchronisation, mit ID3v1, mit Traktor-Frame GEOB "TRAKTOR4"),
+  Unsynchronisation, mit ID3v1, mit Traktor-Frame PRIV bzw. GEOB "TRAKTOR4"),
   schreibt Tags hinein und prüft:
     - die geschriebenen Werte lassen sich wieder lesen
-    - Traktors GEOB-Frame und andere unbekannte Frames sind unverändert
+    - Traktors Frame und andere unbekannte Frames sind unverändert
     - die "Audiodaten" hinter dem Tag sind Byte für Byte gleich
 
   Aufruf:  Id3Test.exe [Ordner für Testdateien]
@@ -23,6 +23,7 @@ uses
 var
   Fehler: Integer = 0;   // Anzahl fehlgeschlagener Prüfungen
   Ordner: string;        // hier entstehen die Testdateien
+  TraktorErwartet: RawByteString; // Traktor-Frame des aktuellen Falls
 
 procedure Pruefe(Ok: Boolean; const Was: string);
 begin
@@ -87,6 +88,12 @@ function TraktorFrame: RawByteString;
 begin
   { GEOB: Kodierung 0, MIME '', Dateiname '', Beschreibung 'TRAKTOR4', Daten }
   Result := Frame(4, 'GEOB', #0 + #0 + #0 + 'TRAKTOR4'#0 + 'DMRT'#1#2#3#$FF#0#$FF'Beatgrid');
+end;
+
+function TraktorPrivFrame: RawByteString;
+begin
+  { PRIV, wie Traktor Pro 3/4 schreibt: Besitzer 'TRAKTOR4', danach Daten }
+  Result := Frame(3, 'PRIV', 'TRAKTOR4'#0 + 'DMRT'#1#2#3#$FF#0#$FF'Cues und Loops');
 end;
 
 procedure SchreibeDatei(const Name: string; const B: TBytes);
@@ -183,8 +190,8 @@ begin
   Nachher := LiesDatei(Fn);
   Pruefe(EndetMit(Nachher, AudioTeil), 'Audiodaten unverändert');
   if MitTraktor then
-    Pruefe(Enthaelt(Nachher, TraktorFrame), 'GEOB-Frame Byte für Byte gleich');
-  Pruefe(Enthaelt(Nachher, Frame(ErwarteMajor, 'PRIV', 'firma'#0'geheim')) or (ErwarteMajor = 3) and not Enthaelt(Datei, 'PRIV'),
+    Pruefe(Enthaelt(Nachher, TraktorErwartet), 'Traktor-Frame Byte für Byte gleich');
+  Pruefe(Enthaelt(Nachher, Frame(ErwarteMajor, 'PRIV', 'firma'#0'geheim')) or not Enthaelt(Datei, 'firma'),
     'unbekannter Frame PRIV erhalten');
   { Cover und Titel wieder entfernen }
   T2.Text[tfTitle] := '';
@@ -207,7 +214,15 @@ begin
             Frame(4, 'TCON', #3'(17)');
   B := nil;
   Add(B, 'ID3'#4#0#0 + Size4(Length(Frames) + 200, True) + Frames + StringOfChar(#0, 200) + A);
+  TraktorErwartet := TraktorFrame;
   Fall('v24-traktor', B, A, True, 4);
+
+  { ID3v2.3 mit Traktor-Daten als PRIV (so wie Traktor Pro 3/4 speichert) }
+  Frames := Frame(3, 'TIT2', #0'Alter Titel') + TraktorPrivFrame;
+  B := nil;
+  Add(B, 'ID3'#3#0#0 + Size4(Length(Frames) + 100, True) + Frames + StringOfChar(#0, 100) + A);
+  TraktorErwartet := TraktorPrivFrame;
+  Fall('v23-traktor-priv', B, A, True, 3);
 
   { ID3v2.3, Latin-1, mit Unsynchronisation des ganzen Blocks }
   Frames := Frame(3, 'TIT2', #0'Titel'#$FF'x') + Frame(3, 'TPE1', #1#$FF#$FE'A'#0'B'#0) +

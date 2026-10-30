@@ -37,7 +37,7 @@
                        Ko-fi-Knopf unten rechts wie in StemMaker
     1.0.1 (30.10.2026)  eigenes Repository Elospeed/StemTagger
     1.1.0 (30.10.2026)  MP3-Dateien (ID3v2, eigener Code in uid3tags.pas);
-                       Traktors Daten in der MP3 (GEOB "TRAKTOR4") und
+                       Traktors Daten in der MP3 (PRIV/GEOB "TRAKTOR4") und
                        alle unbekannten Frames bleiben erhalten
   ============================================================================ }
 unit taggerform;
