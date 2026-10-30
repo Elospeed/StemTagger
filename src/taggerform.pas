@@ -39,7 +39,8 @@
     1.1.0 (30.10.2026)  MP3-Dateien (ID3v2, eigener Code in uid3tags.pas);
                        Traktors Daten in der MP3 (PRIV/GEOB "TRAKTOR4") und
                        alle unbekannten Frames bleiben erhalten;
-                       Spalte "Traktor" zeigt, welche MP3s Traktor-Daten haben
+                       Spalte "Traktor" zeigt, welche MP3s Traktor-Daten haben;
+                       Eingabefelder wachsen mit dem Fenster (Skalierungstest)
   ============================================================================ }
 unit taggerform;
 
@@ -98,6 +99,9 @@ type
     FKofi      : TPaintBox;       // Ko-fi-Knopf unten rechts (wie in StemMaker)
     FKofiHover : Boolean;
     FLoading   : Boolean;          // Felder werden gerade befüllt -> OnChange ignorieren
+    FFields    : TDJPanel;         // Bereich mit den Eingabefeldern (wächst mit dem Fenster)
+    FLabels    : array[TMp4TagField] of TLabel;   // Beschriftung je Feld, nil = nicht angezeigt
+    FFieldCol  : array[TMp4TagField] of Integer;  // Feld steht in Spalte 0 (links) oder 1 (rechts)
     FSelPending: Boolean;          // Anzeige der Auswahl ist schon bestellt
     FLastDir   : string;
     FFolderHint: Boolean;          // Hinweis nach dem Laden eines Ordners zeigen
@@ -151,6 +155,8 @@ type
     procedure HeadMouseUp(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
     function  HeadDivider(X: Integer): Integer;
     procedure FitColumns;
+    function  HeadTextWidth(Col: Integer): Integer;
+    procedure FieldsResize(Sender: TObject);
     procedure AutoFitColumn(Col: Integer);
     procedure ListResize(Sender: TObject);
     procedure ListKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
@@ -477,6 +483,8 @@ var
     Lbl.SetBounds(Scale96ToForm(AX), Scale96ToForm(AY + 5), Scale96ToForm(80), Scale96ToForm(20));
     Lbl.Caption := FieldCaption(AField);
     Lbl.Font.Color := DJ_DIM;
+    FLabels[AField] := Lbl;
+    if AX > 4 then FFieldCol[AField] := 1 else FFieldCol[AField] := 0;
     if AField in [tfGenre, tfKey] then
     begin
       { Auswahlliste, aber auch freie Eingabe }
@@ -668,7 +676,10 @@ begin
   Fields.Align := alClient;
   Fields.BorderSpacing.Around := 1;
   for F := Low(TMp4TagField) to High(TMp4TagField) do
+  begin
     FEdits[F] := nil;
+    FLabels[F] := nil;
+  end;
   Shown := nil;
   for I := Low(FIELD_ORDER) to High(FIELD_ORDER) do
     if FIELD_ORDER[I] in SHOWN_FIELDS then
@@ -727,6 +738,9 @@ begin
   FBtnFromName.Height := Scale96ToForm(24);
   FBtnFromName.Hint := _('"Interpret - Titel.stem.mp4" füllt Interpret und Titel');
   FBtnFromName.ShowHint := True;
+  { Felder beim Vergrössern des Fensters mitziehen (siehe FieldsResize) }
+  FFields := Fields;
+  Fields.OnResize := @FieldsResize;
 
   { Reihenfolge unten festlegen (bei gleicher Ausrichtung entscheidet Top):
     Bearbeiten-Bereich, ganz unten die Fusszeile }
@@ -837,6 +851,14 @@ begin
     for I := 0 to High(FColW) - 1 do
       Inc(Sum, FColW[I]);
   end;
+  { die schmalen Spalten Cover und Traktor nie schmaler als ihre Überschrift
+    (bei 150 % und 200 % war "TRAKTOR" sonst abgeschnitten, Test 30.10.) }
+  for I := 5 to 6 do
+    if FColW[I] < HeadTextWidth(I) then
+    begin
+      Inc(Sum, HeadTextWidth(I) - FColW[I]);
+      FColW[I] := HeadTextWidth(I);
+    end;
   FColW[High(FColW)] := Avail - Sum;
   if FColW[High(FColW)] < Scale96ToForm(60) then
     FColW[High(FColW)] := Scale96ToForm(60);
@@ -849,6 +871,45 @@ begin
     FList.EndUpdate;
   end;
   if FHead <> nil then FHead.Invalidate;
+end;
+
+{ Platz, den die Überschrift einer Spalte braucht (Text in Grossbuchstaben,
+  fett, dazu Abstand und Platz für den Sortierpfeil, wie in HeadPaint) }
+function TMainForm.HeadTextWidth(Col: Integer): Integer;
+begin
+  Result := 0;
+  if (FHead = nil) or (FList = nil) or (Col >= FList.Columns.Count) then Exit;
+  FHead.Canvas.Font := FHead.Font;
+  Result := FHead.Canvas.TextWidth(UTF8UpperCase(FList.Columns[Col].Caption)) + Scale96ToForm(22);
+end;
+
+{ Eingabefelder auf die Breite des Bereichs verteilen: zwei gleich breite
+  Spalten (Beschriftung + Feld), die Felder wachsen mit dem Fenster }
+procedure TMainForm.FieldsResize(Sender: TObject);
+var
+  F: TMp4TagField;
+  ColW, EdW, X: Integer;   // Breite einer Spalte, Breite eines Felds, linker Rand
+  C: TControl;             // Feld (Auswahlliste) bzw. dunkler Rahmen um das Eingabefeld
+begin
+  if FFields = nil then Exit;
+  ColW := Max(Scale96ToForm(292), (FFields.ClientWidth - Scale96ToForm(8)) div 2);
+  EdW := ColW - Scale96ToForm(96);
+  for F := Low(TMp4TagField) to High(TMp4TagField) do
+  begin
+    if (FLabels[F] = nil) or (FEdits[F] = nil) then Continue;
+    X := Scale96ToForm(4) + FFieldCol[F] * ColW;
+    FLabels[F].Left := X;
+    if FEdits[F] is TDJCombo then
+      C := FEdits[F]
+    else
+      C := FEdits[F].Parent;
+    C.SetBounds(X + Scale96ToForm(82), C.Top, EdW, C.Height);
+    if C <> FEdits[F] then
+      FEdits[F].Width := C.Width - Scale96ToForm(12);
+  end;
+  if FBtnFromName <> nil then
+    FBtnFromName.SetBounds(Scale96ToForm(4) + ColW + Scale96ToForm(82), FBtnFromName.Top,
+      EdW, FBtnFromName.Height);
 end;
 
 procedure TMainForm.ListResize(Sender: TObject);
