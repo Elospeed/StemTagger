@@ -8,7 +8,7 @@ Bis Version 1.0.1 wurde der StemTagger als AddOn im Repository [Elospeed/StemMak
 
 ---
 
-## 1.1.0 – MP3-Dateien (noch nicht veröffentlicht)
+## 1.1.0 – MP3-Dateien (30. Oktober 2026)
 
 ### Neu
 - **MP3-Dateien:** MP3s lassen sich wie Stem-Dateien laden (auch beim Durchsuchen von Ordnern) und bekommen dieselben Felder: Titel, Interpret, Album, Album-Interpret, Genre, Jahr, Track-Nr., BPM, Tonart, Label, Kommentar und Cover.
