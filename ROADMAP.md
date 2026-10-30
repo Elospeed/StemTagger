@@ -4,9 +4,9 @@
 
 Was als Nächstes kommt. Erledigtes steht im [CHANGELOG](CHANGELOG.md), lose Ideen in [docs/IDEEN.md](docs/IDEEN.md).
 
-## 1.1 – MP3-Dateien (in Arbeit)
+## Später
 
-- MP3-Dateien laden und Tags schreiben, mit eigenem ID3v2-Code (keine Fremdbibliothek). Umgesetzt, Praxistest mit Traktor-analysierten MP3s steht noch aus.
+- Die neuen Sprachen (seit 1.2) von Muttersprachlern gegenlesen lassen, zusammen mit StemMaker.
 
 ## Danach
 
