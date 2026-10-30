@@ -2,7 +2,7 @@
 
 **by Elospeed**
 
-🇩🇪 **Deutsche Anleitung:** [LIESMICH.md](LIESMICH.md)
+🇩🇪 **Deutsche Anleitung:** [LIESMICH.md](LIESMICH.md) · 🌐 **Project page:** [elospeed.github.io/StemTagger](https://elospeed.github.io/StemTagger/)
 
 Sets title, artist, album, genre, year, label, comment and cover art in **Traktor stem files (`*.stem.mp4`)** and **MP3 files**, the things Traktor and Mixxx show and search for. Many files at once, with a dark, compact window.
 

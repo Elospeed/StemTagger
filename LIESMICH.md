@@ -2,7 +2,7 @@
 
 **von Elospeed**
 
-🇬🇧 **English guide:** [README.md](README.md)
+🇬🇧 **English guide:** [README.md](README.md) · 🌐 **Projektseite:** [elospeed.github.io/StemTagger](https://elospeed.github.io/StemTagger/de/)
 
 Setzt Titel, Interpret, Album, Genre, Jahr, Label, Kommentar und Cover in **Traktor-Stem-Dateien (`*.stem.mp4`)** und **MP3-Dateien**, also das, was Traktor und Mixxx anzeigen und wonach man dort sucht. Auch für viele Dateien auf einmal, in einem dunklen, kompakten Fenster.
 

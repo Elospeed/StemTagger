@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>StemTagger – kostenloser Tag- und Cover-Editor für Traktor-Stems und MP3</title>
+<meta name="description" content="Elospeed StemTagger setzt Titel, Interpret, Album, Genre und Cover in Traktor-Stem-Dateien (.stem.mp4) und MP3s, ohne die Stems oder Traktors Cue-Punkte zu beschädigen. Kostenlos, Open Source, portabel, für Windows.">
+<meta name="keywords" content="stem.mp4 Tags, Traktor Stems Tag-Editor, Cover Stem-Datei, MP3 Tags Traktor Cue-Punkte, Traktor Pro 4, Mixxx Stems, DJ, ID3, Windows, kostenlos, Open Source">
+<meta name="author" content="Elospeed">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://elospeed.github.io/StemTagger/de/">
+<link rel="alternate" hreflang="en" href="https://elospeed.github.io/StemTagger/">
+<link rel="alternate" hreflang="de" href="https://elospeed.github.io/StemTagger/de/">
+<link rel="alternate" hreflang="x-default" href="https://elospeed.github.io/StemTagger/">
+<meta name="theme-color" content="#121315">
+<link rel="icon" type="image/png" href="../img/icon-192.png">
+<link rel="apple-touch-icon" href="../img/icon-192.png">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Elospeed StemTagger">
+<meta property="og:title" content="StemTagger – Tags und Cover für Traktor-Stems und MP3s">
+<meta property="og:description" content="Titel, Interpret, Genre und Cover in .stem.mp4- und MP3-Dateien setzen. Die Stems und Traktors Cue-Punkte bleiben unangetastet. Kostenlos und Open Source für Windows.">
+<meta property="og:url" content="https://elospeed.github.io/StemTagger/de/">
+<meta property="og:image" content="https://elospeed.github.io/StemTagger/img/og-image-de.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="de_DE">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="StemTagger – Tags und Cover für Traktor-Stems und MP3s">
+<meta name="twitter:description" content="Titel, Interpret, Genre und Cover in .stem.mp4- und MP3-Dateien setzen. Die Stems und Traktors Cue-Punkte bleiben unangetastet. Kostenlos und Open Source für Windows.">
+<meta name="twitter:image" content="https://elospeed.github.io/StemTagger/img/og-image-de.png">
+
+<link rel="stylesheet" href="../style.css">
+
+<script>
+  // Wer oben ausdrücklich Englisch gewählt hat, kommt auf die englische Seite.
+  // Ohne eigene Wahl bleibt die deutsche Seite (z. B. bei einem Link aus einem deutschen Forum).
+  (function () {
+    var wahl = null;
+    try { wahl = localStorage.getItem('elospeed-lang'); } catch (e) {}
+    if (wahl === 'en') location.replace('../' + location.hash);
+  })();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Elospeed StemTagger",
+  "operatingSystem": "Windows 10, Windows 11 (64-bit)",
+  "applicationCategory": "MultimediaApplication",
+  "description": "Tag- und Cover-Editor für Traktor-Stem-Dateien (.stem.mp4) und MP3-Dateien. Geändert werden nur die Tags: Stems, Audio und Traktors eigene Daten (Cue-Punkte, Beatgrid) bleiben Byte für Byte gleich.",
+  "url": "https://elospeed.github.io/StemTagger/de/",
+  "downloadUrl": "https://github.com/Elospeed/StemTagger/releases/latest",
+  "softwareVersion": "1.1.0",
+  "inLanguage": "de",
+  "license": "https://opensource.org/licenses/MIT",
+  "isAccessibleForFree": true,
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CHF" },
+  "author": { "@type": "Organization", "name": "Elospeed", "url": "https://github.com/Elospeed" },
+  "screenshot": "https://elospeed.github.io/StemTagger/img/stemtagger-de.png"
+}
+</script>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="../img/icon-192.png" alt="" width="30" height="30">Elospeed StemTagger</a>
+    <nav>
+      <a class="hide-m" href="#funktionen">Funktionen</a>
+      <a class="hide-m" href="#mp3">MP3</a>
+      <a class="hide-m" href="#so-gehts">So geht's</a>
+      <a class="hide-m" href="#faq">FAQ</a>
+      <a class="hide-m" href="https://github.com/Elospeed/StemTagger">GitHub</a>
+      <a class="lang" href="../" hreflang="en" lang="en" onclick="try{localStorage.setItem('elospeed-lang','en')}catch(e){}">English</a>
+    </nav>
+  </div>
+  <div class="stripes"><i></i><i></i><i></i><i></i></div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="wrap">
+    <h1>Tags und Cover für deine<br><span class="grad">Traktor-Stems</span> und MP3s</h1>
+    <p class="lead">Der StemTagger setzt Titel, Interpret, Album, Genre und Cover in <code>.stem.mp4</code>- und MP3-Dateien, für einen Track oder einen ganzen Ordner auf einmal. Geändert werden nur die Tags: Die Stems, das Audio und Traktors Cue-Punkte bleiben genau so, wie sie waren. Ein kleines, portables Windows-Programm, kostenlos und Open Source.</p>
+    <div class="cta">
+      <a class="btn primary" href="https://github.com/Elospeed/StemTagger/releases/latest">⬇ Download für Windows</a>
+      <a class="btn" href="https://github.com/Elospeed/StemTagger">Quellcode auf GitHub</a>
+    </div>
+    <ul class="facts">
+      <li>Kostenlos &amp; MIT-Lizenz</li>
+      <li>Windows 10 / 11</li>
+      <li>Portabel, ohne Installation</li>
+      <li>Stem-Dateien und MP3</li>
+      <li>Cue-Punkte bleiben erhalten</li>
+      <li>Deutsch, Englisch, Spanisch</li>
+    </ul>
+    <figure class="shot hero-shot">
+      <div class="bar"><img src="../img/icon-32.png" alt=""><span>Elospeed StemTagger 1.1.0</span><i class="min"></i><i class="max"></i><i class="cls"></i></div>
+      <img src="../img/stemtagger-de.png" width="1000" height="590" alt="StemTagger-Fenster im dunklen Design: Liste mit Stem-Dateien und MP3s mit Titel, Interpret, Album, Genre, Cover, Traktor-Daten und Status wie „Ohne Cover“ oder „Stem OK“, darunter Cover und Felder des markierten Tracks">
+    </figure>
+  </div>
+</section>
+
+<section id="funktionen" class="alt">
+  <div class="wrap">
+    <h2>Saubere Tags, ohne die Stems zu gefährden</h2>
+    <p class="sub">Normale Tag-Editoren schreiben eine Stem-Datei beim Speichern manchmal so um, dass Traktor sie danach nur noch als normalen Track lädt. Der StemTagger ist genau für diese Dateien gemacht.</p>
+    <div class="grid">
+      <div class="card"><h3><span class="dot" style="background:var(--drums)"></span>Die Stems bleiben unangetastet</h3><p>Nur die Tag-Liste in der Datei ändert sich. Die fünf Audiospuren und die Stem-Daten (Namen und Farben) bleiben Byte für Byte gleich. Die neue Datei wird geprüft, bevor sie das Original ersetzt; stimmt etwas nicht, bleibt das Original, wie es war.</p></div>
+      <div class="card"><h3><span class="dot" style="background:var(--bass)"></span>MP3 mit Traktor-Daten</h3><p>Seit Version 1.1 bearbeitet der StemTagger auch MP3s, mit eigenem ID3-Code. Traktors Cue-Punkte, Loops, Beatgrid und Analyse bleiben erhalten, und eine Spalte zeigt, welche MP3s Traktor schon analysiert hat.</p></div>
+      <div class="card"><h3><span class="dot" style="background:var(--other)"></span>Viele Dateien auf einmal</h3><p>Dateien oder ganze Ordner hineinziehen (mit Unterordnern), mehrere Zeilen markieren und Album, Genre oder Cover für alle setzen. Felder mit unterschiedlichen Werten zeigen <code>&lt;verschieden&gt;</code> und bleiben pro Datei erhalten, bis du sie änderst.</p></div>
+      <div class="card"><h3><span class="dot" style="background:var(--vox)"></span>Cover ganz bequem</h3><p>Bild aufs Fenster ziehen, im Browser kopieren und mit Strg+V einfügen oder eine Datei wählen. JPEG und PNG bleiben unverändert, grosse Bilder lassen sich auf 1000 Pixel verkleinern, und ein Cover lässt sich auch wieder als Bild speichern.</p></div>
+      <div class="card"><h3><span class="dot" style="background:var(--other)"></span>Fehlendes auf einen Blick</h3><p>Die Spalte Status zeigt „Ohne Tags“ oder „Ohne Cover“, die Spalten Cover und Traktor zeigen, was schon da ist. Ein Klick auf die Spaltenüberschrift sortiert, und die Lücken in deiner Sammlung stehen ganz oben.</p></div>
+      <div class="card"><h3><span class="dot" style="background:var(--drums)"></span>Kleine Helfer</h3><p>Eine Genre-Liste mit rund 50 Stilen, die beim Tippen ergänzt, Interpret und Titel direkt aus dem Dateinamen (<code>Interpret - Titel.stem.mp4</code>) und auf Wunsch eine Sicherungskopie vor dem ersten Speichern.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="mp3">
+  <div class="wrap split">
+    <div>
+      <span class="badge">Neu in 1.1</span>
+      <h2>MP3s, und Traktors Cue-Punkte bleiben</h2>
+      <p class="sub" style="margin-bottom:0">Traktor speichert Cue-Punkte, Loops und Beatgrid direkt in der MP3. Viele Programme werfen diese Daten beim Speichern weg. Der StemTagger nicht.</p>
+      <ul class="ticks">
+        <li><strong>Ersetzt werden nur die geänderten Felder</strong>: Audio und alles andere im Tag bleiben Byte für Byte gleich, auch Traktors eigener Eintrag (<code>TRAKTOR4</code>) mit Cue-Punkten, Loops, Beatgrid und Analyse</li>
+        <li><strong>Spalte „Traktor“</strong>: zeigt auf einen Blick, welche MP3s Traktor schon analysiert hat</li>
+        <li><strong>Dieselben Felder wie bei Stem-Dateien</strong>: Titel, Interpret, Album, Genre, Jahr, Label, Kommentar und Cover, in der ID3-Version der Datei (2.3 oder 2.4)</li>
+        <li><strong>Getestet mit Traktor Pro 4</strong>: MP3 mit Cue-Punkten, Markern und Loop mit dem StemTagger getaggt und neu geladen, alles noch da</li>
+        <li>Sehr alte oder beschädigte Tags werden angezeigt, aber nie verändert („Nur lesen“)</li>
+      </ul>
+    </div>
+    <figure class="shot">
+      <div class="bar"><img src="../img/icon-32.png" alt=""><span>Elospeed StemTagger 1.1.0</span><i class="min"></i><i class="max"></i><i class="cls"></i></div>
+      <img src="../img/stemtagger-mp3-de.png" width="1000" height="590" alt="StemTagger mit markierter MP3: Die Spalte Traktor zeigt „ja“ bei MP3s mit Traktor-Daten, der Status lautet „MP3 OK, mit Traktor-Daten“, darunter Cover und Tags der MP3" loading="lazy">
+    </figure>
+  </div>
+</section>
+
+<section id="so-gehts" class="alt">
+  <div class="wrap">
+    <h2>So geht's</h2>
+    <p class="sub">Drei Schritte, ohne Installation.</p>
+    <ol class="steps">
+      <li><strong>Herunterladen und entpacken</strong><code>StemTagger-&lt;Version&gt;.zip</code> von GitHub laden, irgendwohin entpacken und <code>StemTagger.exe</code> starten. Der Ordner <code>lang</code> muss daneben bleiben.</li>
+      <li><strong>Tracks hineinziehen</strong><code>.stem.mp4</code>-Dateien, MP3s oder ganze Ordner ins Fenster ziehen. Eine oder mehrere Zeilen markieren und unten die Felder ausfüllen, Cover inklusive.</li>
+      <li><strong>Speichern</strong>Auf Speichern klicken (oder Strg+S). Geschrieben werden nur geänderte Dateien. Danach in Traktor oder Mixxx neu einlesen, und die neuen Tags sind da.</li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Gehört zur StemMaker-Familie</h2>
+    <div class="family">
+      <img src="../img/stemmaker-icon-32.png" alt="" width="48" height="48">
+      <p><a href="https://elospeed.github.io/StemMaker/de/"><strong>Elospeed StemMaker</strong></a> macht aus deinen eigenen MP3s Traktor-Stem-Dateien und hat den StemTagger schon als AddOn dabei: ein Klick in der AddOn-Leiste oder Rechtsklick auf eine Datei und „Tags bearbeiten...“. Du hast schon Stem-Dateien und brauchst nur die Tags? Dann reicht der StemTagger allein.</p>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="alt">
+  <div class="wrap">
+    <h2>Fragen und Antworten</h2>
+    <details>
+      <summary>Ist der StemTagger wirklich kostenlos?</summary>
+      <p>Ja. Der StemTagger ist Open Source unter der MIT-Lizenz. Keine Werbung, kein Konto und keine Bezahlversion. Wenn er dir gefällt, kannst du auf <a href="https://ko-fi.com/elospeed">Ko-fi</a> freiwillig etwas spenden.</p>
+    </details>
+    <details>
+      <summary>Warum nicht mein gewohnter Tag-Editor?</summary>
+      <p>Für normale MP3s geht das oft gut. Stem-Dateien sind aber besonders: Neben dem Master enthalten sie vier Stem-Spuren und einen Block mit Namen und Farben der Stems. Manche Tag-Editoren schreiben beim Speichern die ganze Datei neu und lassen diesen Block weg, und Traktor lädt die Datei danach als normalen Track. Manche werfen auch Traktors eigene Daten in MP3s weg (Cue-Punkte, Loops, Beatgrid). Der StemTagger ändert nur die Tag-Einträge und prüft die neue Datei, bevor sie das Original ersetzt.</p>
+    </details>
+    <details>
+      <summary>Welche Dateien kann er bearbeiten?</summary>
+      <p>Traktor-Stem-Dateien (<code>.stem.mp4</code>) und MP3-Dateien. Felder: Titel, Interpret, Album, Genre, Jahr, Label, Kommentar und Cover. Album-Interpret, Track-Nr., BPM und Tonart bleiben so, wie sie in der Datei stehen.</p>
+    </details>
+    <details>
+      <summary>Und BPM und Tonart?</summary>
+      <p>Die ermitteln Traktor und Mixxx beim Analysieren selbst. Werte, die schon in der Datei stehen, bleiben erhalten.</p>
+    </details>
+    <details>
+      <summary>Welche DJ-Software zeigt die Tags an?</summary>
+      <p>Von uns getestet mit <strong>Traktor Pro 4</strong> und <strong>Mixxx 2.6 Beta</strong>: Titel, Interpret, Album, Genre und Cover werden angezeigt, und die Stem-Dateien laden weiterhin als Stems. Programme, die eine Datei schon kennen, müssen ihre Tags eventuell neu einlesen.</p>
+    </details>
+    <details>
+      <summary>Windows zeigt „Der Computer wurde durch Windows geschützt“. Ist das schlimm?</summary>
+      <p>Der StemTagger ist nicht digital signiert, weil Signatur-Zertifikate jedes Jahr Geld kosten. Auf „Weitere Informationen“ und dann „Trotzdem ausführen“ klicken. Der ganze Quellcode liegt auf GitHub, und du kannst den Download bei VirusTotal prüfen oder selbst bauen.</p>
+    </details>
+    <details>
+      <summary>In welcher Sprache läuft er?</summary>
+      <p>Deutsch, Englisch oder Spanisch. Allein gestartet richtet sich der StemTagger nach der Sprache von Windows (Deutsch bei deutschem Windows, sonst Englisch). Als AddOn von StemMaker nimmt er die Sprache, die du in StemMaker gewählt hast.</p>
+    </details>
+    <details>
+      <summary>Wo kann ich Fragen stellen oder Ideen vorschlagen?</summary>
+      <p>In den <a href="https://github.com/Elospeed/StemMaker/discussions">GitHub Discussions</a> von StemMaker. Dort kannst du auch Screenshots und Dateien anhängen. Lesen geht ohne Konto, zum Schreiben braucht es ein kostenloses GitHub-Konto.</p>
+    </details>
+  </div>
+</section>
+
+<section>
+  <div class="wrap" style="text-align:center">
+    <h2>Bereit, deine Sammlung aufzuräumen?</h2>
+    <p class="sub" style="margin:0 auto 26px">ZIP herunterladen, entpacken und den ersten Ordner hineinziehen.</p>
+    <div class="cta">
+      <a class="btn primary" href="https://github.com/Elospeed/StemTagger/releases/latest">⬇ StemTagger herunterladen</a>
+      <a class="btn" href="https://github.com/Elospeed/StemTagger/blob/main/LIESMICH.md">Anleitung lesen</a>
+    </div>
+    <p class="support">Der StemTagger ist ein Ein-Personen-Hobbyprojekt und bleibt kostenlos. Wenn er dir Zeit spart, kannst du mir <a href="https://ko-fi.com/elospeed">auf Ko-fi einen Kaffee spendieren</a> ☕ oder einfach <a href="https://github.com/Elospeed/StemTagger">auf GitHub einen Stern geben</a>. Beides ist ganz freiwillig.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>© Elospeed · Der StemTagger ist Open Source unter der <a href="https://github.com/Elospeed/StemTagger/blob/main/LICENSE">MIT-Lizenz</a> · <a href="https://elospeed.github.io/de/">Weitere Tools von Elospeed</a> · <a href="https://www.youtube.com/@elospeed">YouTube</a></div>
+    <div>Traktor ist eine Marke von Native Instruments. Der StemTagger steht in keiner Verbindung zu Native Instruments.</div>
+  </div>
+</footer>
+
+</body>
+</html>
