@@ -41,6 +41,9 @@
                        alle unbekannten Frames bleiben erhalten;
                        Spalte "Traktor" zeigt, welche MP3s Traktor-Daten haben;
                        Eingabefelder wachsen mit dem Fenster (Skalierungstest)
+    1.2.0 (30.10.2026)  Französisch, Portugiesisch (BR), Italienisch, Japanisch,
+                       Niederländisch, Polnisch (wie StemMaker 2.2); Windows-
+                       Sprache wird genommen, wenn es eine .po dazu gibt
   ============================================================================ }
 unit taggerform;
 
@@ -56,7 +59,7 @@ uses
 
 const
   APP_TITLE = 'Elospeed StemTagger';
-  APP_VER   = '1.1.0';
+  APP_VER   = '1.2.0';
   KOFI_URL  = 'https://ko-fi.com/elospeed';
 
 type

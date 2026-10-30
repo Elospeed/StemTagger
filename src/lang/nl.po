@@ -1,0 +1,423 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: nl\n"
+"X-Source-Language: de\n"
+"Project-Id-Version: Elospeed StemTagger\n"
+
+#: taggerform.pas:732
+msgid "  Camelot (Mixed In Key):  8A = a-Moll, 8B = C-Dur (A = Moll, B = Dur)"
+msgstr "  Camelot (Mixed In Key):  8A = a-klein, 8B = C-groot (A = mineur, B = majeur)"
+
+#: taggerform.pas:731
+msgid "  Klassisch:  Am = a-Moll, C = C-Dur (m = Moll, ohne m = Dur)"
+msgstr "  Klassiek:  Am = a-klein, C = C-groot (m = mineur, zonder m = majeur)"
+
+#: taggerform.pas:733
+msgid "  Open Key (Traktor):  1m = a-Moll, 1d = C-Dur (m = Moll, d = Dur)"
+msgstr "  Open Key (Traktor):  1m = a-klein, 1d = C-groot (m = mineur, d = majeur)"
+
+#: taggerform.pas:742
+msgid "\"Interpret - Titel.stem.mp4\" füllt Interpret und Titel"
+msgstr "\"Artiest - Titel.stem.mp4\" vult artiest en titel in"
+
+#: taggerform.pas:2218
+msgid "%d Dateien aus dem Dateinamen übernommen - noch nicht gespeichert"
+msgstr "%d bestanden ingevuld vanuit de bestandsnaam - nog niet opgeslagen"
+
+#: taggerform.pas:1842
+msgid "%d Dateien gespeichert"
+msgstr "%d bestanden opgeslagen"
+
+#: taggerform.pas:1839
+msgid "%d Dateien gespeichert, %d mit Fehler. Die Dateien mit Fehler sind unverändert, Details in der Spalte Status."
+msgstr "%d bestanden opgeslagen, %d met fout. De bestanden met fout zijn ongewijzigd, details in de kolom Status."
+
+#: taggerform.pas:1645
+msgid "%d Dateien in der Liste."
+msgstr "%d bestanden in de lijst."
+
+#: taggerform.pas:1779
+msgid "%d Dateien werden geändert."
+msgstr "%d bestanden worden gewijzigd."
+
+#: taggerform.pas:1451
+msgid "%d Dateien, %d geändert"
+msgstr "%d bestanden, %d gewijzigd"
+
+#: taggerform.pas:2028
+msgid "%d markierte Dateien haben ungespeicherte Änderungen. Trotzdem aus der Liste nehmen?"
+msgstr "%d geselecteerde bestanden hebben niet-opgeslagen wijzigingen. Toch uit de lijst halen?"
+
+#: taggerform.pas:1523 taggerform.pas:1552
+msgid "<verschieden>"
+msgstr "<verschillend>"
+
+#: taggerform.pas:1648
+msgid "Achtung bei Mehrfachauswahl: Sind mehrere Zeilen markiert, bekommen alle markierten Dateien den neuen Wert (z.B. alle dasselbe Album oder Cover). Felder mit „<verschieden>“ bleiben pro Datei erhalten, solange du sie nicht änderst."
+msgstr "Let op bij meervoudige selectie: als er meerdere regels geselecteerd zijn, krijgen alle geselecteerde bestanden de nieuwe waarde (bijv. allemaal hetzelfde album of dezelfde hoes). Velden met „<verschillend>” behouden per bestand hun waarde, zolang je ze niet wijzigt."
+
+#: taggerform.pas:430 taggerform.pas:760
+msgid "Album"
+msgstr "Album"
+
+#: taggerform.pas:719
+msgid "Album, EP oder Single, auf der der Track erschienen ist"
+msgstr "Album, EP of single waarop de track is verschenen"
+
+#: taggerform.pas:431
+msgid "Album-Interpret"
+msgstr "Albumartiest"
+
+#: taggerform.pas:1650
+msgid "Audio, Stems und Traktors eigene Daten (auch in MP3s) bleiben immer unverändert, neu geschrieben werden nur die Tags."
+msgstr "Audio, stems en de eigen gegevens van Traktor (ook in MP3's) blijven altijd ongewijzigd, alleen de tags worden opnieuw geschreven."
+
+#: taggerform.pas:435
+msgid "BPM"
+msgstr "BPM"
+
+#: taggerform.pas:1769
+msgid "BPM „%s“ bei %s ist ungültig. Bitte eine ganze Zahl von %d bis %d eingeben oder das Feld leeren."
+msgstr "BPM „%s” bij %s is ongeldig. Voer een geheel getal van %d tot %d in of maak het veld leeg."
+
+#: taggerform.pas:1646
+msgid "Beim Laden wird nichts verändert. In die Dateien geschrieben wird erst mit „Speichern“, und nur bei Dateien mit Änderungen."
+msgstr "Bij het laden wordt niets gewijzigd. Er wordt pas in de bestanden geschreven met „Opslaan”, en alleen bij bestanden met wijzigingen."
+
+#: taggerform.pas:736
+msgid "Benachbarte Zahlen passen beim Mixen gut zusammen (z.B. 8A zu 7A, 9A und 8B)."
+msgstr "Naburige getallen passen bij het mixen goed bij elkaar (bijv. 8A bij 7A, 9A en 8B)."
+
+#: taggerform.pas:675
+msgid "Bild aus der Zwischenablage einfügen (Strg+V)"
+msgstr "Afbeelding van het klembord plakken (Ctrl+V)"
+
+#: taggerform.pas:1731
+msgid "Bild kann nicht gelesen werden:%s%s"
+msgstr "Afbeelding kan niet worden gelezen:%s%s"
+
+#: taggerform.pas:671
+msgid "Bild..."
+msgstr "Afbeelding..."
+
+#: taggerform.pas:2064
+msgid "Bilder"
+msgstr "Afbeeldingen"
+
+#: taggerform.pas:440 taggerform.pas:760
+msgid "Cover"
+msgstr "Hoes"
+
+#: taggerform.pas:2170
+msgid "Cover speichern"
+msgstr "Hoes opslaan"
+
+#: taggerform.pas:2063
+msgid "Cover-Bild wählen"
+msgstr "Hoesafbeelding kiezen"
+
+#: taggerform.pas:2143
+msgid "Das Bild aus der Zwischenablage kann nicht gelesen werden."
+msgstr "De afbeelding op het klembord kan niet worden gelezen."
+
+#: taggerform.pas:759
+msgid "Datei"
+msgstr "Bestand"
+
+#: taggerform.pas:1976
+msgid "Dateien öffnen"
+msgstr "Bestanden openen"
+
+#: taggerform.pas:578
+msgid "Dateien..."
+msgstr "Bestanden..."
+
+#: taggerform.pas:621
+msgid "Die Kopie wird nie überschrieben, sie bleibt also das echte Original."
+msgstr "De kopie wordt nooit overschreven, dus blijft ze het echte origineel."
+
+#: taggerform.pas:735
+msgid "Die Liste zeigt alle drei, gespeichert wird die klassische (z.B. Am)."
+msgstr "De lijst toont alle drie, opgeslagen wordt de klassieke (bijv. Am)."
+
+#: taggerform.pas:1739
+msgid "Dieses Bildformat wird nicht unterstützt. Bitte JPEG, PNG, BMP oder GIF verwenden."
+msgstr "Dit afbeeldingsformaat wordt niet ondersteund. Gebruik JPEG, PNG, BMP of GIF."
+
+#: taggerform.pas:777
+msgid "Doppelklick auf den Rand passt die Spalte an den Text an"
+msgstr "Dubbelklik op de rand om de kolom aan de tekst aan te passen"
+
+#: taggerform.pas:672
+msgid "Einfügen"
+msgstr "Plakken"
+
+#: taggerform.pas:580 taggerform.pas:673
+msgid "Entfernen"
+msgstr "Verwijderen"
+
+#: taggerform.pas:723
+msgid "Erscheinungsjahr, z.B. 2016"
+msgstr "Jaar van verschijnen, bijv. 2016"
+
+#: taggerform.pas:730
+msgid "Es gibt drei übliche Schreibweisen für dieselbe Tonart:"
+msgstr "Er zijn drie gangbare schrijfwijzen voor dezelfde toonsoort:"
+
+#: taggerform.pas:2301
+msgid "Es gibt ungespeicherte Änderungen. Jetzt speichern?"
+msgstr "Er zijn niet-opgeslagen wijzigingen. Nu opslaan?"
+
+#: taggerform.pas:2048
+msgid "Es gibt ungespeicherte Änderungen. Liste trotzdem leeren?"
+msgstr "Er zijn niet-opgeslagen wijzigingen. Lijst toch leegmaken?"
+
+#: taggerform.pas:1827
+msgid "Fehler: "
+msgstr "Fout: "
+
+#: taggerform.pas:1797
+msgid "Fehler: Sicherungskopie nicht möglich"
+msgstr "Fout: back-up niet mogelijk"
+
+#: taggerform.pas:738
+msgid "Freier Text, z.B. Notizen fürs Auflegen"
+msgstr "Vrije tekst, bijv. notities voor het draaien"
+
+#: taggerform.pas:432 taggerform.pas:760
+msgid "Genre"
+msgstr "Genre"
+
+#: taggerform.pas:1822
+msgid "Gespeichert"
+msgstr "Opgeslagen"
+
+#: taggerform.pas:625
+msgid "Grosse Cover auf %d px verkleinern"
+msgstr "Grote hoezen verkleinen tot %d px"
+
+#: taggerform.pas:1309
+msgid "Im Ordner wurden keine Stem- oder MP3-Dateien gefunden:%s%s"
+msgstr "Geen stem- of MP3-bestanden gevonden in de map:%s%s"
+
+#: taggerform.pas:2127
+msgid "In der Zwischenablage ist kein Bild."
+msgstr "Er staat geen afbeelding op het klembord."
+
+#: taggerform.pas:429 taggerform.pas:759
+msgid "Interpret"
+msgstr "Artiest"
+
+#: taggerform.pas:720
+msgid "Interpret des ganzen Albums, z.B. „Various Artists“ bei Compilations."
+msgstr "Artiest van het hele album, bijv. „Various Artists” bij compilaties."
+
+#: taggerform.pas:739
+msgid "Interpret/Titel aus Dateiname"
+msgstr "Artiest/titel uit bestandsnaam"
+
+#: taggerform.pas:433
+msgid "Jahr"
+msgstr "Jaar"
+
+#: taggerform.pas:1781
+msgid "Jetzt speichern?"
+msgstr "Nu opslaan?"
+
+#: taggerform.pas:607 taggerform.pas:1620
+msgid "Kaffee spendieren"
+msgstr "Trakteer op een koffie"
+
+#: taggerform.pas:1366
+msgid "Keine Stem-Datei"
+msgstr "Geen stem-bestand"
+
+#: taggerform.pas:775
+msgid "Klick sortiert, nochmal klicken sortiert umgekehrt"
+msgstr "Klik om te sorteren, nogmaals klikken sorteert omgekeerd"
+
+#: taggerform.pas:438
+msgid "Kommentar"
+msgstr "Opmerking"
+
+#: taggerform.pas:718
+msgid "Künstler oder Band, z.B. „Kungs“"
+msgstr "Artiest of band, bijv. „Kungs”"
+
+#: taggerform.pas:437
+msgid "Label"
+msgstr "Label"
+
+#: taggerform.pas:721
+msgid "Leer lassen, wenn er gleich ist wie der Interpret."
+msgstr "Leeg laten als die gelijk is aan de artiest."
+
+#: taggerform.pas:620
+msgid "Legt vor dem ersten Speichern eine Kopie der Originaldatei an (Name.stem.mp4.bak)."
+msgstr "Maakt vóór het eerste opslaan een kopie van het originele bestand (naam.stem.mp4.bak)."
+
+#: taggerform.pas:581
+msgid "Liste leeren"
+msgstr "Lijst leegmaken"
+
+#: taggerform.pas:1427
+msgid "MP3 OK"
+msgstr "MP3 OK"
+
+#: taggerform.pas:1425
+msgid "MP3 OK, mit Traktor-Daten"
+msgstr "MP3 OK, met Traktor-gegevens"
+
+#: taggerform.pas:1979
+msgid "MP3-Dateien"
+msgstr "MP3-bestanden"
+
+#: taggerform.pas:1980
+msgid "MP4-Dateien"
+msgstr "MP4-bestanden"
+
+#: taggerform.pas:722
+msgid "Musikstil: aus der Liste wählen oder selbst eintippen"
+msgstr "Muziekstijl: kies uit de lijst of typ zelf"
+
+#: taggerform.pas:717
+msgid "Name des Tracks, z.B. „Clap Your Hands“"
+msgstr "Naam van de track, bijv. „Clap Your Hands”"
+
+#: taggerform.pas:1780
+msgid "Neu geschrieben werden nur die geänderten Tags, Audio, Stems und Traktor-Daten bleiben unverändert."
+msgstr "Alleen de gewijzigde tags worden opnieuw geschreven, audio, stems en Traktor-gegevens blijven ongewijzigd."
+
+#: taggerform.pas:1343 taggerform.pas:1362 taggerform.pas:1374
+msgid "Nicht lesbar"
+msgstr "Niet leesbaar"
+
+#: taggerform.pas:1651
+msgid "Nicht mehr anzeigen"
+msgstr "Niet meer tonen"
+
+#: taggerform.pas:724
+msgid "Nummer auf dem Album, z.B. 3 oder 3/12 (Track 3 von 12)"
+msgstr "Nummer op het album, bijv. 3 of 3/12 (track 3 van 12)"
+
+#: taggerform.pas:1349
+msgid "Nur lesen (alter oder beschädigter ID3-Tag)"
+msgstr "Alleen-lezen (oude of beschadigde ID3-tag)"
+
+#: taggerform.pas:1423
+msgid "Ohne Cover"
+msgstr "Zonder hoes"
+
+#: taggerform.pas:1420
+msgid "Ohne Tags"
+msgstr "Zonder tags"
+
+#: taggerform.pas:1418
+msgid "Ohne Tags und Cover"
+msgstr "Zonder tags en hoes"
+
+#: taggerform.pas:1644
+msgid "Ordner geladen"
+msgstr "Map geladen"
+
+#: taggerform.pas:2004
+msgid "Ordner mit Stem- oder MP3-Dateien wählen (mit Unterordnern)"
+msgstr "Kies een map met stem- of MP3-bestanden (inclusief submappen)"
+
+#: taggerform.pas:579
+msgid "Ordner..."
+msgstr "Map..."
+
+#: taggerform.pas:737
+msgid "Plattenfirma, die den Track veröffentlicht hat"
+msgstr "Platenlabel dat de track heeft uitgebracht"
+
+#: taggerform.pas:776
+msgid "Rand zwischen zwei Spalten ziehen ändert die Breite"
+msgstr "Sleep de rand tussen twee kolommen om de breedte te wijzigen"
+
+#: taggerform.pas:619
+msgid "Sicherungskopie anlegen (.bak)"
+msgstr "Back-up maken (.bak)"
+
+#: taggerform.pas:1789
+msgid "Speichere %s ..."
+msgstr "%s wordt opgeslagen ..."
+
+#: taggerform.pas:590
+msgid "Speichern"
+msgstr "Opslaan"
+
+#: taggerform.pas:674
+msgid "Speichern..."
+msgstr "Opslaan..."
+
+#: taggerform.pas:761
+msgid "Status"
+msgstr "Status"
+
+#: taggerform.pas:1429
+msgid "Stem OK (%d Spuren)"
+msgstr "Stem OK (%d sporen)"
+
+#: taggerform.pas:1977
+msgid "Stem- und MP3-Dateien"
+msgstr "Stem- en MP3-bestanden"
+
+#: taggerform.pas:1978
+msgid "Stem-Dateien"
+msgstr "Stem-bestanden"
+
+#: taggerform.pas:1449
+msgid "Stem-Dateien, MP3s oder Ordner hierher ziehen"
+msgstr "Sleep stembestanden, MP3's of mappen hierheen"
+
+#: taggerform.pas:725
+msgid "Tempo in Schlägen pro Minute, nur ganze Zahlen von %d bis %d, z.B. 128."
+msgstr "Tempo in slagen per minuut, alleen gehele getallen van %d tot %d, bijv. 128."
+
+#: taggerform.pas:428 taggerform.pas:759
+msgid "Titel"
+msgstr "Titel"
+
+#: taggerform.pas:436
+msgid "Tonart"
+msgstr "Toonsoort"
+
+#: taggerform.pas:728
+msgid "Tonart des Tracks: aus der Liste wählen oder selbst eintippen."
+msgstr "Toonsoort van de track: kies uit de lijst of typ zelf."
+
+#: taggerform.pas:434
+msgid "Track-Nr."
+msgstr "Tracknr."
+
+#: taggerform.pas:761
+msgid "Traktor"
+msgstr "Traktor"
+
+#: taggerform.pas:727
+msgid "Traktor misst das Tempo beim Analysieren ohnehin selbst."
+msgstr "Traktor meet het tempo bij het analyseren toch zelf."
+
+#: taggerform.pas:2265
+msgid "Zuerst die Dateien markieren, die dieses Cover bekommen sollen."
+msgstr "Selecteer eerst de bestanden die deze cover moeten krijgen."
+
+#: taggerform.pas:1411
+msgid "geändert"
+msgstr "gewijzigd"
+
+#: taggerform.pas:1399 taggerform.pas:1405
+msgid "ja"
+msgstr "ja"
+
+#: taggerform.pas:1670
+msgid "kein Cover"
+msgstr "geen hoes"
+
+#: taggerform.pas:589
+msgid "Änderungen verwerfen"
+msgstr "Wijzigingen verwerpen"
+

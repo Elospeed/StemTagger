@@ -6,7 +6,7 @@
 #
 # Inhalt (Ordner StemTagger\):
 #   StemTagger.exe, LIESMICH.txt (DE), README.txt (EN), LICENSE.txt,
-#   lang\*.po (Englisch, Spanisch; Deutsch steckt in der Exe)
+#   lang\*.po (alle Übersetzungen; Deutsch steckt in der Exe)
 # Die Version kommt aus APP_VER in src/taggerform.pas.
 #
 # Ergebnis: <Ausgabeordner>/StemTagger-<Version>.zip

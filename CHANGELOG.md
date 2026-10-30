@@ -8,6 +8,15 @@ Bis Version 1.0.1 wurde der StemTagger als AddOn im Repository [Elospeed/StemMak
 
 ---
 
+## 1.2.0 – Neue Sprachen (30. Oktober 2026)
+
+### Neu
+- **Sechs neue Sprachen:** Französisch, Portugiesisch (Brasilien), Italienisch, Japanisch, Niederländisch und Polnisch, dieselben wie in StemMaker 2.2. Es sind maschinelle Entwürfe, noch nicht von Muttersprachlern gegengelesen.
+- **Sprache von Windows:** Ohne StemMaker nimmt der StemTagger die Windows-Sprache, wenn es eine Übersetzung dafür gibt (bisher nur Deutsch, sonst Englisch). Jede andere Sprache bekommt weiterhin Englisch. Mit StemMaker gilt wie bisher dessen Spracheinstellung.
+
+### Entwicklung
+- `src/ulang.pas` auf dem Stand von StemMaker (Sprachen aus Windows, Anzeigenamen „Português (Brasil)“ und „日本語“). `lang-tools/i18n.py` schreibt im `.po`-Kopf `pt_BR` wie Poedit.
+
 ## 1.1.0 – MP3-Dateien (30. Oktober 2026)
 
 ### Neu
