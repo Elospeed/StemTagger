@@ -42,3 +42,9 @@ Alle Fenster müssen bei **100 %, 125 %, 150 % und 200 %** Windows-Skalierung ko
 - Keine Exes, ZIPs oder andere Build-Ergebnisse einchecken. Testversionen gibt es als Workflow-Artefakt (siehe [Testversionen](TESTVERSIONEN.md)).
 - Jede Aufgabe trägt sich im selben PR in `TODO.md` ein bzw. aus.
 - Speedy merged PRs, legt Releases an und ändert die Repo-Einstellungen selbst.
+
+## Projektseite
+
+- Die Projektseite liegt in `site/` (Englisch `index.html`, Deutsch `de/index.html`), veröffentlicht von `.github/workflows/pages.yml`.
+- Bei jedem Release die Seite vollständig nachführen: Texte, „Neu in“-Abschnitt, alle Screenshots DE und EN (Versionsnummer in der Fensterleiste), `softwareVersion` im JSON-LD und die OG-Bilder, falls sie sich geändert haben.
+- Beide Sprachen immer gleich halten; was auf der einen Seite steht, steht auch auf der anderen.

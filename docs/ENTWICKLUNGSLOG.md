@@ -14,6 +14,13 @@ Bugs, Lehren und Stolperfallen, neueste oben. Was für Benutzer neu ist, steht i
 
 - Praxistest mit Traktor Pro: Cue-Punkte, Marker und Loop stehen in einem Frame `PRIV` mit Besitzer „TRAKTOR4“ (hier rund 80 KB), nicht im `GEOB`-Frame älterer Versionen. Der Frame blieb beim Speichern schon vorher Byte für Byte gleich (unbekannte Frames werden nie angefasst), aber der Status zeigte nur „MP3 OK“. `IsTraktorFrame` erkennt jetzt PRIV und GEOB; der Selbsttest hat dafür einen eigenen Fall (`v23-traktor-priv`).
 
+## Projektseite (30. Oktober 2026)
+
+- Eigene Projektseite unter https://elospeed.github.io/StemTagger/ (Englisch) und `/de/` (Deutsch), statisches HTML in `site/`, gleicher Aufbau und gleiches Stylesheet wie die StemMaker-Seite. Veröffentlicht wird sie von `.github/workflows/pages.yml` bei jeder Änderung in `site/` auf `main`. Einmalig nötig: Settings → Pages → Source = „GitHub Actions“.
+- Sprache: Die englische Seite leitet Besucher mit deutschem Browser auf `/de/` weiter. Wer oben die Sprache umschaltet, behält die Wahl (`localStorage` „elospeed-lang“, gilt für alle Seiten unter elospeed.github.io). Die deutsche Seite leitet nur weiter, wenn jemand ausdrücklich Englisch gewählt hat, damit Links aus deutschen Foren deutsch bleiben.
+- Screenshots: Release-Exe unter Wine mit 192 dpi (200 %) und Noto-Schrift, Fenster 2000 × 1180, auf der Seite halb so gross angezeigt. Testdateien: Kopien einer Demo-Stem-Datei und Demo-MP3s mit selbst gemachten Covern, Traktor-Daten als `PRIV`-Eintrag „TRAKTOR4“. Bei jedem Release neu machen (Versionsnummer in der Fensterleiste, `softwareVersion` im JSON-LD).
+- IndexNow: eigener Schlüssel als Datei `site/<schlüssel>.txt`, nie löschen.
+
 ## Umzug in ein eigenes Repository (30. Oktober 2026)
 
 - Der StemTagger brauchte aus StemMaker: den Tag-Teil von `ustemmp4.pas`, `djcontrols.pas` (StemPlayer), `ulang.pas`, `ustatusdraw.pas` und `uskalierung.pas`. Das sind jetzt **Kopien** in `src/`. Ändert sich eine davon in StemMaker (z. B. ein DPI-Fix in `uskalierung.pas`), muss sie hier von Hand nachgezogen werden und umgekehrt.
