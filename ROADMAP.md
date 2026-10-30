@@ -4,12 +4,9 @@
 
 Was als Nächstes kommt. Erledigtes steht im [CHANGELOG](CHANGELOG.md), lose Ideen in [docs/IDEEN.md](docs/IDEEN.md).
 
-## 1.1 – MP3-Dateien
+## 1.1 – MP3-Dateien (in Arbeit)
 
-- MP3-Dateien laden und Tags schreiben, mit eigenem ID3v2-Code (keine Fremdbibliothek).
-- Traktors eigene Daten in der MP3 bleiben erhalten: der Frame `GEOB` mit `TRAKTOR4` (Beatgrid, Cue-Punkte, Analyse) und alle anderen unbekannten Frames werden unverändert übernommen.
-- Gleiche Felder wie bei Stem-Dateien (Titel, Interpret, Album, Album-Interpret, Genre, Jahr, Track-Nr., BPM, Tonart, Label, Kommentar, Cover).
-- Gleiche Sicherheit wie bei Stem-Dateien: über eine Zwischendatei schreiben, Audiodaten vorher und nachher vergleichen, erst dann das Original ersetzen.
+- MP3-Dateien laden und Tags schreiben, mit eigenem ID3v2-Code (keine Fremdbibliothek). Umgesetzt, Praxistest mit Traktor-analysierten MP3s steht noch aus.
 
 ## Danach
 

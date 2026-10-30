@@ -1,10 +1,10 @@
-# Elospeed StemTagger 1.0.1
+# Elospeed StemTagger 1.1
 
 **von Elospeed**
 
 🇬🇧 **English guide:** [README.md](README.md)
 
-Setzt Titel, Interpret, Album, Genre, Jahr, Label, Kommentar und Cover in **Traktor-Stem-Dateien (`*.stem.mp4`)**, also das, was Traktor und Mixxx anzeigen und wonach man dort sucht. Auch für viele Dateien auf einmal, in einem dunklen, kompakten Fenster.
+Setzt Titel, Interpret, Album, Genre, Jahr, Label, Kommentar und Cover in **Traktor-Stem-Dateien (`*.stem.mp4`)** und **MP3-Dateien**, also das, was Traktor und Mixxx anzeigen und wonach man dort sucht. Auch für viele Dateien auf einmal, in einem dunklen, kompakten Fenster.
 
 **Warum ein eigenes Programm?** Normale Tag-Editoren schreiben eine Stem-Datei beim Speichern manchmal so um, dass Traktor sie danach nur noch als normalen Track lädt. Der StemTagger ändert nur die Tag-Liste in der Datei. Die 5 Audiospuren und die Stem-Daten (Namen und Farben der Stems) bleiben Byte für Byte gleich. Vor dem Ersetzen wird die neue Datei geprüft (gleiche Spurenzahl, gleiche Stem-Daten). Klappt etwas nicht, bleibt das Original unverändert. Getestet in Traktor Pro 4 und Mixxx 2.6 Beta.
 
@@ -12,6 +12,7 @@ Der StemTagger gehört zur Familie von [Elospeed StemMaker](https://github.com/E
 
 ## Was er kann
 
+- **Auch MP3 (ab 1.1):** eigener ID3v2-Code, ersetzt werden nur die geänderten Felder. Audio und alles andere im Tag bleiben Byte für Byte gleich, auch Traktors eigene Daten (Beatgrid, Cue-Punkte, Analyse im Eintrag `TRAKTOR4`). Der Status zeigt, welche MP3s Traktor schon analysiert hat.
 - **Viele Dateien auf einmal:** Dateien oder ganze Ordner hineinziehen (mit Unterordnern), mehrere Zeilen markieren und z. B. Album oder Cover für alle setzen. Felder mit unterschiedlichen Werten zeigen „<verschieden>“ und bleiben pro Datei erhalten, solange man sie nicht ändert.
 - **Cover bequem:** Bild aufs Fenster ziehen, im Browser kopieren und mit Strg+V einfügen oder Datei wählen. JPEG und PNG bleiben unverändert, BMP und GIF werden zu JPEG. Bilder über 1000 Pixel lassen sich verkleinern. Das Cover lässt sich auch wieder als Bild speichern.
 - **Genre mit Auswahlliste:** rund 50 Musikstile oder selbst eintippen (wird beim Tippen ergänzt).
@@ -30,10 +31,6 @@ Die ausführliche Bedienungsanleitung liegt dem ZIP als `LIESMICH.txt` bei (Quel
 
 Windows SmartScreen warnt eventuell, weil die Exe nicht signiert ist: „Weitere Informationen“ → „Trotzdem ausführen“.
 
-## Geplant
-
-MP3-Dateien (ID3v2-Tags, Traktors eigene Daten in der Datei bleiben erhalten) kommen mit Version 1.1, siehe [ROADMAP.md](ROADMAP.md).
-
 ## Selbst bauen
 
 Lazarus 3.8 (Free Pascal 3.2.2), keine Zusatzpakete:
@@ -42,7 +39,7 @@ Lazarus 3.8 (Free Pascal 3.2.2), keine Zusatzpakete:
 lazbuild -B --os=win64 --cpu=x86_64 --ws=win32 src/StemTagger.lpi
 ```
 
-Die Exe landet in `bin\`. Sprachdateien: `python lang-tools/i18n.py src src/lang` (Übersetzungen in `lang-tools/en.json` und `es.json`). Jeder Push und jeder Pull Request wird von GitHub Actions automatisch gebaut (`.github/workflows/build.yml`).
+Die Exe landet in `bin\`. Sprachdateien: `python lang-tools/i18n.py src src/lang` (Übersetzungen in `lang-tools/en.json` und `es.json`). Selbsttest für den MP3-Teil: `fpc -Mobjfpc -Sh -Fusrc -FUlib/test -FEbin tests/Id3Test.lpr`, danach `bin\Id3Test.exe`. Jeder Push und jeder Pull Request wird von GitHub Actions automatisch gebaut und getestet (`.github/workflows/build.yml`).
 
 Für Entwickler: [CHANGELOG](CHANGELOG.md), [ROADMAP](ROADMAP.md), [TODO](TODO.md), [Entwicklungsregeln](docs/ENTWICKLUNGSREGELN.md), [Entwicklungslog](docs/ENTWICKLUNGSLOG.md), [Testversionen](docs/TESTVERSIONEN.md), [Ideen](docs/IDEEN.md).
 
