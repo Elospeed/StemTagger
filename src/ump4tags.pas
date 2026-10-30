@@ -104,6 +104,10 @@ function WriteMp4Tags(const FileName: string; const Tags: TMp4Tags;
 { Ist das Bild JPEG oder PNG? (nur diese beiden kennt das MP4-Cover) }
 function IsMp4CoverImage(const Img: TBytes): Boolean;
 
+{ Name eines alten ID3v1-Genres (0 = Blues ... 79 = Hard Rock),
+  '' = unbekannte Nummer. Gebraucht für MP4 ('gnre') und MP3 (TCON "(17)"). }
+function Id3GenreName(N: Integer): string;
+
 implementation
 
 { ---------------------------------------------------------------------------
@@ -942,6 +946,14 @@ begin
   Result := (Length(Img) > 4) and
     (((Img[0] = $FF) and (Img[1] = $D8)) or                     // JPEG
      ((Img[0] = $89) and (Img[1] = $50) and (Img[2] = $4E) and (Img[3] = $47))); // PNG
+end;
+
+function Id3GenreName(N: Integer): string;
+begin
+  if (N >= Low(Id3Genres)) and (N <= High(Id3Genres)) then
+    Result := Id3Genres[N]
+  else
+    Result := '';
 end;
 
 { Zahl aus einem Text holen ('128.4' -> 128, '3/12' -> 3), -1 = keine }

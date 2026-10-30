@@ -5,12 +5,14 @@
   Lizenz  : frei (wie Elospeed StemMaker)
 
   Der StemTagger setzt Titel, Interpret, Cover und weitere Tags in
-  Traktor-Stem-Dateien (.stem.mp4). Normale Tag-Editoren schreiben die
+  Traktor-Stem-Dateien (.stem.mp4) und MP3-Dateien. Normale Tag-Editoren schreiben die
   Datei dabei manchmal so um, dass Traktor sie nicht mehr als Stem
   erkennt. Hier werden nur die Tags in moov/udta/meta/ilst geändert,
   alles andere (5 Spuren, 'stem'-Box, Audiodaten) bleibt Byte für Byte
   gleich - das erledigt uMp4Tags.WriteMp4Tags, inklusive Prüfung der
-  neuen Datei, bevor das Original ersetzt wird.
+  neuen Datei, bevor das Original ersetzt wird. Bei MP3 macht dasselbe
+  uId3Tags.WriteMp3Tags: nur die geänderten ID3v2-Frames werden ersetzt,
+  Audiodaten und Traktors eigene Frames bleiben Byte für Byte gleich.
 
   Bedienung:
     - Dateien oder Ordner hineinziehen (oder über die Knöpfe oben)
@@ -33,6 +35,10 @@
          (28.10.2026)  Sicherungskopie standardmässig wieder aus (das
                        Speichern geht über eine geprüfte Zwischendatei),
                        Ko-fi-Knopf unten rechts wie in StemMaker
+    1.0.1 (30.10.2026)  eigenes Repository Elospeed/StemTagger
+    1.1.0 (30.10.2026)  MP3-Dateien (ID3v2, eigener Code in uid3tags.pas);
+                       Traktors Daten in der MP3 (GEOB "TRAKTOR4") und
+                       alle unbekannten Frames bleiben erhalten
   ============================================================================ }
 unit taggerform;
 
@@ -43,12 +49,12 @@ interface
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, ExtCtrls,
   ComCtrls, LCLType, LCLIntf, Clipbrd, FileUtil, LazFileUtils, LazUTF8,
-  IniFiles, IntfGraphics, Contnrs, ImgList, Math, uLang, uMp4Tags, uStatusDraw, djcontrols, djextra, coverbild,
+  IniFiles, IntfGraphics, Contnrs, ImgList, Math, uLang, uMp4Tags, uId3Tags, uStatusDraw, djcontrols, djextra, coverbild,
   uSkalierung;
 
 const
   APP_TITLE = 'Elospeed StemTagger';
-  APP_VER   = '1.0.1';
+  APP_VER   = '1.1.0';
   KOFI_URL  = 'https://ko-fi.com/elospeed';
 
 type
@@ -58,7 +64,10 @@ type
     Orig    : TMp4Tags;        // so steht es in der Datei
     Cur     : TMp4Tags;        // so soll es werden
     Dirty   : TMp4TagFields;   // geänderte Felder (noch nicht gespeichert)
-    IsStem  : Boolean;         // nur Stem-Dateien dürfen bearbeitet werden
+    IsStem  : Boolean;         // gültige Stem-Datei (5 Spuren + 'stem'-Box)
+    IsMp3   : Boolean;         // MP3-Datei (Tags im ID3v2-Block)
+    Mp3     : TMp3Info;        // ID3-Version, Traktor-Daten (nur bei MP3)
+    CanEdit : Boolean;         // darf bearbeitet werden: Stem-Datei oder schreibbare MP3
     Tracks  : Integer;
     Status  : string;          // letzte Meldung (gespeichert, Fehler ...)
   end;
@@ -189,16 +198,16 @@ begin
   Result := False;
 end;
 
-{ Datei, die der StemTagger öffnen kann (MP4-Container) }
+{ Datei, die der StemTagger öffnen kann (MP4-Container oder MP3) }
 function IsTagFile(const FileName: string): Boolean;
 var
   E: string;
 begin
   E := LowerCase(ExtractFileExt(FileName));
-  Result := (E = '.mp4') or (E = '.m4a');
+  Result := (E = '.mp4') or (E = '.m4a') or (E = '.mp3');
 end;
 
-{ Name ohne .stem.mp4 / .mp4 / .m4a }
+{ Name ohne .stem.mp4 / .mp4 / .m4a / .mp3 }
 function BareName(const FileName: string): string;
 var
   L: string;
@@ -1214,7 +1223,7 @@ var
 begin
   if DirectoryExists(Path) then
   begin
-    Files := FindAllFiles(Path, '*.stem.mp4;*.stem.m4a', True);
+    Files := FindAllFiles(Path, '*.stem.mp4;*.stem.m4a;*.mp3', True);
     try
       Files.Sort;
       FList.Items.BeginUpdate;
@@ -1231,7 +1240,7 @@ begin
         Application.QueueAsyncCall(@ShowFolderHint, 0);
       end
       else if Files.Count = 0 then
-        MessageDlg(Format(_('Im Ordner wurden keine Stem-Dateien gefunden:%s%s'), [LineEnding, Path]),
+        MessageDlg(Format(_('Im Ordner wurden keine Stem- oder MP3-Dateien gefunden:%s%s'), [LineEnding, Path]),
           mtInformation, [mbOK], 0);
     finally
       Files.Free;
@@ -1259,21 +1268,43 @@ begin
       Exit;
   E := TTagEntry.Create;
   E.FileName := FileName;
+  E.IsMp3 := IsMp3File(FileName);
   try
-    E.Tracks := CountTracks(FileName);
-    E.IsStem := (E.Tracks >= 5) and (ReadStemJSON(FileName) <> '');
-    if not ReadMp4Tags(FileName, E.Orig, Err) then
+    if E.IsMp3 then
     begin
-      E.IsStem := False;
-      E.Status := _('Nicht lesbar');
-      Log('Nicht lesbar: ' + FileName + ' (' + Err + ')');
+      if not ReadMp3Tags(FileName, E.Orig, E.Mp3, Err) then
+      begin
+        E.Status := _('Nicht lesbar');
+        Log('Nicht lesbar: ' + FileName + ' (' + Err + ')');
+      end
+      else if not E.Mp3.CanWrite then
+      begin
+        { ID3v2.2 oder beschädigter Block: nur anzeigen, nie schreiben }
+        E.Status := _('Nur lesen (alter oder beschädigter ID3-Tag)');
+        Log('Nur lesen: ' + FileName + ' (' + E.Mp3.Problem + ')');
+      end
+      else
+        E.CanEdit := True;
     end
-    else if not E.IsStem then
-      E.Status := _('Keine Stem-Datei');
+    else
+    begin
+      E.Tracks := CountTracks(FileName);
+      E.IsStem := (E.Tracks >= 5) and (ReadStemJSON(FileName) <> '');
+      if not ReadMp4Tags(FileName, E.Orig, Err) then
+      begin
+        E.IsStem := False;
+        E.Status := _('Nicht lesbar');
+        Log('Nicht lesbar: ' + FileName + ' (' + Err + ')');
+      end
+      else if not E.IsStem then
+        E.Status := _('Keine Stem-Datei');
+      E.CanEdit := E.IsStem;
+    end;
   except
     on Ex: Exception do
     begin
       E.IsStem := False;
+      E.CanEdit := False;
       E.Status := _('Nicht lesbar');
       Log('Nicht lesbar: ' + FileName + ' (' + Ex.Message + ')');
     end;
@@ -1316,6 +1347,10 @@ begin
   end
   else if Length(E.Cur.Cover) = 0 then
     St := _('Ohne Cover')
+  else if E.IsMp3 and E.Mp3.HasTraktor then
+    St := _('MP3 OK, mit Traktor-Daten')
+  else if E.IsMp3 then
+    St := _('MP3 OK')
   else
     St := Format(_('Stem OK (%d Spuren)'), [E.Tracks]);
   Item.SubItems.Add(St);
@@ -1337,7 +1372,7 @@ var
 begin
   N := DirtyCount;
   if FEntries.Count = 0 then
-    FStatus.Caption := _('Stem-Dateien oder Ordner hierher ziehen')
+    FStatus.Caption := _('Stem-Dateien, MP3s oder Ordner hierher ziehen')
   else
     FStatus.Caption := Format(_('%d Dateien, %d geändert'), [FEntries.Count, N]);
   FBtnSave.Enabled := N > 0;
@@ -1373,7 +1408,7 @@ begin
   try
     CanEdit := Sel.Count > 0;
     for I := 0 to Sel.Count - 1 do
-      if not TTagEntry(Sel[I]).IsStem then
+      if not TTagEntry(Sel[I]).CanEdit then
         CanEdit := False;
     for F := Low(TMp4TagField) to High(TMp4TagField) do
     begin
@@ -1533,12 +1568,12 @@ procedure TMainForm.ShowFolderHint(Data: PtrInt);
 begin
   FFolderHintPending := False;
   if QuestionDlg(_('Ordner geladen'),
-       Format(_('%d Stem-Dateien in der Liste.'), [FList.Items.Count]) + LineEnding + LineEnding +
+       Format(_('%d Dateien in der Liste.'), [FList.Items.Count]) + LineEnding + LineEnding +
        _('Beim Laden wird nichts verändert. In die Dateien geschrieben wird erst mit „Speichern“, und nur bei Dateien mit Änderungen.') +
        LineEnding + LineEnding +
        _('Achtung bei Mehrfachauswahl: Sind mehrere Zeilen markiert, bekommen alle markierten Dateien den neuen Wert (z.B. alle dasselbe Album oder Cover). Felder mit „<verschieden>“ bleiben pro Datei erhalten, solange du sie nicht änderst.') +
        LineEnding + LineEnding +
-       _('Audio, Stems und Traktors eigene Daten bleiben immer unverändert, neu geschrieben werden nur die Tags.'),
+       _('Audio, Stems und Traktors eigene Daten (auch in MP3s) bleiben immer unverändert, neu geschrieben werden nur die Tags.'),
        mtInformation, [mrOk, 'OK', mrNo, _('Nicht mehr anzeigen')], 0) = mrNo then
   begin
     FFolderHint := False;
@@ -1591,7 +1626,7 @@ begin
     for I := 0 to Sel.Count - 1 do
     begin
       E := TTagEntry(Sel[I]);
-      if not E.IsStem then Continue;
+      if not E.CanEdit then Continue;
       E.Cur.Cover := Copy(Data);
       if SameBytes(E.Cur.Cover, E.Orig.Cover) then
         Exclude(E.Dirty, tfCover)
@@ -1645,6 +1680,7 @@ var
   E: TTagEntry;
   Err, Bak: string;
   Fresh: TMp4Tags;
+  Written, ReadOk: Boolean;   // Schreiben bzw. Nachlesen hat geklappt
 begin
   Result := False;
   Ok := 0;
@@ -1660,14 +1696,14 @@ begin
         [E.Cur.Text[tfBpm], ExtractFileName(E.FileName), BPM_MIN, BPM_MAX]), mtWarning, [mbOK], 0);
       Exit;
     end;
-    if E.IsStem and (E.Dirty <> []) then
+    if E.CanEdit and (E.Dirty <> []) then
       Inc(N);
   end;
   if N = 0 then Exit(True);
   { bei mehreren Dateien lieber nachfragen - eine Änderung bei markierten
     Zeilen gilt für alle markierten }
   if Ask and (N > 1) and (MessageDlg(Format(_('%d Dateien werden geändert.'), [N]) + LineEnding + LineEnding +
-      _('Neu geschrieben werden nur die geänderten Tags, Audio und Stems bleiben unverändert.') +
+      _('Neu geschrieben werden nur die geänderten Tags, Audio, Stems und Traktor-Daten bleiben unverändert.') +
       LineEnding + _('Jetzt speichern?'), mtConfirmation, [mbYes, mbNo], 0) <> mrYes) then
     Exit;
   Screen.Cursor := crHourGlass;
@@ -1675,7 +1711,7 @@ begin
     for I := 0 to FList.Items.Count - 1 do
     begin
       E := TTagEntry(FList.Items[I].Data);
-      if (E.Dirty = []) or not E.IsStem then Continue;
+      if (E.Dirty = []) or not E.CanEdit then Continue;
       FStatus.Caption := Format(_('Speichere %s ...'), [ExtractFileName(E.FileName)]);
       Application.ProcessMessages;
       { Sicherungskopie nur einmal anlegen - so bleibt das echte Original }
@@ -1691,10 +1727,18 @@ begin
           Continue;
         end;
       end;
-      if WriteMp4Tags(E.FileName, E.Cur, E.Dirty, Err) then
+      if E.IsMp3 then
+        Written := WriteMp3Tags(E.FileName, E.Cur, E.Dirty, Err)
+      else
+        Written := WriteMp4Tags(E.FileName, E.Cur, E.Dirty, Err);
+      if Written then
       begin
         Log('Gespeichert: ' + E.FileName);
-        if ReadMp4Tags(E.FileName, Fresh, Err) then
+        if E.IsMp3 then
+          ReadOk := ReadMp3Tags(E.FileName, Fresh, E.Mp3, Err)
+        else
+          ReadOk := ReadMp4Tags(E.FileName, Fresh, Err);
+        if ReadOk then
           E.Orig := Fresh
         else
           E.Orig := E.Cur;
@@ -1827,7 +1871,7 @@ begin
     for I := 0 to Sel.Count - 1 do
     begin
       E := TTagEntry(Sel[I]);
-      if not E.IsStem then Continue;
+      if not E.CanEdit then Continue;
       { Feld war "verschieden" und ist wieder leer: nichts ändern, jede
         Datei behält ihren eigenen Wert }
       if FMixed[F] and (V = '') then
@@ -1855,8 +1899,10 @@ var
 begin
   Dlg := TOpenDialog.Create(Self);
   try
-    Dlg.Title := _('Stem-Dateien öffnen');
-    Dlg.Filter := _('Stem-Dateien') + ' (*.stem.mp4;*.stem.m4a)|*.stem.mp4;*.stem.m4a|' +
+    Dlg.Title := _('Dateien öffnen');
+    Dlg.Filter := _('Stem- und MP3-Dateien') + ' (*.stem.mp4;*.stem.m4a;*.mp3)|*.stem.mp4;*.stem.m4a;*.mp3|' +
+                  _('Stem-Dateien') + ' (*.stem.mp4;*.stem.m4a)|*.stem.mp4;*.stem.m4a|' +
+                  _('MP3-Dateien') + ' (*.mp3)|*.mp3|' +
                   _('MP4-Dateien') + ' (*.mp4;*.m4a)|*.mp4;*.m4a';
     Dlg.Options := Dlg.Options + [ofAllowMultiSelect, ofFileMustExist];
     Dlg.InitialDir := FLastDir;
@@ -1881,7 +1927,7 @@ var
 begin
   Dlg := TSelectDirectoryDialog.Create(Self);
   try
-    Dlg.Title := _('Ordner mit Stem-Dateien wählen (mit Unterordnern)');
+    Dlg.Title := _('Ordner mit Stem- oder MP3-Dateien wählen (mit Unterordnern)');
     Dlg.InitialDir := FLastDir;
     if Dlg.Execute then
     begin
@@ -2079,7 +2125,7 @@ begin
   begin
     if not FList.Items[I].Selected then Continue;
     E := TTagEntry(FList.Items[I].Data);
-    if not E.IsStem then Continue;
+    if not E.CanEdit then Continue;
     if SplitFileName(E.FileName, Artist, Title) then
     begin
       E.Cur.Text[tfArtist] := Artist;
@@ -2142,7 +2188,7 @@ begin
     if HasSel and FBtnCoverLoad.Enabled then
       LoadCoverFile(FileNames[0])
     else
-      MessageDlg(_('Zuerst die Stem-Dateien markieren, die dieses Cover bekommen sollen.'),
+      MessageDlg(_('Zuerst die Dateien markieren, die dieses Cover bekommen sollen.'),
         mtInformation, [mbOK], 0);
     Exit;
   end;

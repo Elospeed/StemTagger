@@ -75,6 +75,18 @@ jobs:
         # -B = alle Units neu übersetzen (kein alter Stand aus einem Cache)
         run: lazbuild -B --os=win64 --cpu=x86_64 --ws=win32 src/StemTagger.lpi
 
+      - name: Selbsttest MP3-Tags
+        # tests/Id3Test.lpr baut Test-MP3s (ID3v2.3/2.4, Unsynchronisation,
+        # ID3v1, Traktor-Eintrag), schreibt Tags und prüft, dass Audio und
+        # unbekannte Frames gleich bleiben. Exit-Code = Anzahl Fehler.
+        run: |
+          set -e
+          mkdir -p lib/test
+          FPC=$(find /c/lazarus -iname fpc.exe -path '*x86_64-win64*' 2>/dev/null | head -n 1 || true)
+          if [ -z "$FPC" ]; then FPC=$(command -v fpc); fi
+          "$FPC" -Mobjfpc -Sh -O2 -Fusrc -FUlib/test -FEbin tests/Id3Test.lpr
+          bin/Id3Test.exe "$RUNNER_TEMP/id3test"
+
       - name: Exe verkleinern, ZIP bauen, Prüfsummen bilden
         run: |
           set -e

@@ -1,8 +1,8 @@
-Elospeed StemTagger 1.0.1  -  by Elospeed  (ko-fi.com/elospeed)
+Elospeed StemTagger 1.1.0  -  by Elospeed  (ko-fi.com/elospeed)
 ================================================================
 
 Sets title, artist, album, genre, year, label, comment and cover art in
-Traktor stem files (.stem.mp4) - what Traktor and Mixxx show and search.
+Traktor stem files (.stem.mp4) and MP3 files - what Traktor and Mixxx show and search.
 BPM and key are detected by Traktor and Mixxx during analysis; values that
 are already in the file are kept.
 
@@ -57,8 +57,17 @@ NOTE ON TRAKTOR
   Traktor, Traktor may write its own values back. The file must not be
   loaded in Traktor while saving.
 
-NOT YET
-  MP3 files will follow in a later version.
+MP3 FILES (since 1.1)
+  MP3s are loaded like stem files (also when searching folders) and get
+  the same fields. The tags live in the ID3v2 block at the start of the
+  file. Only the entries of the changed fields are replaced. The audio
+  data and everything else in the block stay byte for byte the same,
+  especially Traktor's own data (beatgrid, cue points, analysis in the
+  "TRAKTOR4" entry). The Status column shows "MP3 OK, with Traktor data"
+  when Traktor has already analysed the file. StemTagger writes the ID3
+  version that is already in the file (2.3 or 2.4); MP3s without tags get
+  ID3v2.3. Very old tags (ID3v2.2) and damaged tags are shown but not
+  changed. An old ID3v1 tag at the end of the file is left as it is.
 
 LOG
   logs\StemTagger.log next to the exe (if that folder is read-only:
