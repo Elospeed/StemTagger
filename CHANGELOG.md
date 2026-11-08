@@ -8,7 +8,7 @@ Bis Version 1.0.1 wurde der StemTagger als AddOn im Repository [Elospeed/StemMak
 
 ---
 
-## 1.2.1 – Linux-Fenster (7. November 2026)
+## 1.2.1 – Linux-Fenster (8. November 2026)
 
 ### Behoben
 - **Linux (AppImage von StemMaker, Beta):** Das Fenster liess sich unter Ubuntu nicht minimieren, und das Dock zeigte ein Zahnrad statt des Programmsymbols. Unter Wine besitzt jetzt das Hauptfenster selbst den Taskleisten-Knopf (`src/uwine.pas`, Kopie aus StemMaker). Unter Windows ändert sich nichts.
