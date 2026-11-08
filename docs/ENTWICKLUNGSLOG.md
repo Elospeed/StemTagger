@@ -5,6 +5,11 @@
 Bugs, Lehren und Stolperfallen, neueste oben. Was für Benutzer neu ist, steht im [CHANGELOG](../CHANGELOG.md).
 Ältere Einträge zum StemTagger (bis 1.0.1) stehen im Entwicklungslog von [Elospeed/StemMaker](https://github.com/Elospeed/StemMaker/blob/main/docs/ENTWICKLUNGSLOG.md).
 
+## Linux: Fenster nicht minimierbar (1.2.1, 7. November 2026)
+
+- Im Linux-AppImage von StemMaker (Wine) hängt Lazarus das Hauptfenster unter ein unsichtbares Anwendungsfenster; Wine setzt daraus `WM_TRANSIENT_FOR`, und GNOME behandelt das Fenster als Dialog (kein Minimieren, Zahnrad im Dock).
+- `src/uwine.pas` (Kopie aus StemMaker) setzt nur unter Wine `Application.MainFormOnTaskBar := True`, Aufruf direkt nach `Application.Initialize`. Unter Windows unverändert. Hintergrund im Entwicklungslog von StemMaker (2.2.1).
+
 ## Skalierungstest 1.1.0 (30. Oktober 2026)
 
 - Test bei 100/125/150/200 %: Die neue Spalte „Traktor“ war mit 60 px (96 dpi) zu knapp für die fette Überschrift samt Platz für den Sortierpfeil; ab 150 % abgeschnitten. Jetzt bekommen Cover und Traktor mindestens die gemessene Textbreite der Überschrift (`HeadTextWidth`), statt sich auf eine feste Pixelzahl zu verlassen.
