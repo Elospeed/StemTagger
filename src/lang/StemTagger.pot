@@ -5,419 +5,419 @@ msgstr ""
 "X-Source-Language: de\n"
 "Project-Id-Version: Elospeed StemTagger\n"
 
-#: taggerform.pas:734
+#: taggerform.pas:736
 msgid "  Camelot (Mixed In Key):  8A = a-Moll, 8B = C-Dur (A = Moll, B = Dur)"
 msgstr ""
 
-#: taggerform.pas:733
+#: taggerform.pas:735
 msgid "  Klassisch:  Am = a-Moll, C = C-Dur (m = Moll, ohne m = Dur)"
 msgstr ""
 
-#: taggerform.pas:735
+#: taggerform.pas:737
 msgid "  Open Key (Traktor):  1m = a-Moll, 1d = C-Dur (m = Moll, d = Dur)"
 msgstr ""
 
-#: taggerform.pas:744
+#: taggerform.pas:746
 msgid "\"Interpret - Titel.stem.mp4\" füllt Interpret und Titel"
 msgstr ""
 
-#: taggerform.pas:2220
+#: taggerform.pas:2228
 msgid "%d Dateien aus dem Dateinamen übernommen - noch nicht gespeichert"
 msgstr ""
 
-#: taggerform.pas:1844
+#: taggerform.pas:1852
 msgid "%d Dateien gespeichert"
 msgstr ""
 
-#: taggerform.pas:1841
+#: taggerform.pas:1849
 msgid "%d Dateien gespeichert, %d mit Fehler. Die Dateien mit Fehler sind unverändert, Details in der Spalte Status."
 msgstr ""
 
-#: taggerform.pas:1647
+#: taggerform.pas:1655
 msgid "%d Dateien in der Liste."
 msgstr ""
 
-#: taggerform.pas:1781
+#: taggerform.pas:1789
 msgid "%d Dateien werden geändert."
 msgstr ""
 
-#: taggerform.pas:1453
+#: taggerform.pas:1461
 msgid "%d Dateien, %d geändert"
 msgstr ""
 
-#: taggerform.pas:2030
+#: taggerform.pas:2038
 msgid "%d markierte Dateien haben ungespeicherte Änderungen. Trotzdem aus der Liste nehmen?"
 msgstr ""
 
-#: taggerform.pas:1525 taggerform.pas:1554
+#: taggerform.pas:1533 taggerform.pas:1562
 msgid "<verschieden>"
 msgstr ""
 
-#: taggerform.pas:1650
+#: taggerform.pas:1658
 msgid "Achtung bei Mehrfachauswahl: Sind mehrere Zeilen markiert, bekommen alle markierten Dateien den neuen Wert (z.B. alle dasselbe Album oder Cover). Felder mit „<verschieden>“ bleiben pro Datei erhalten, solange du sie nicht änderst."
 msgstr ""
 
-#: taggerform.pas:432 taggerform.pas:762
+#: taggerform.pas:434 taggerform.pas:764
 msgid "Album"
 msgstr ""
 
-#: taggerform.pas:721
+#: taggerform.pas:723
 msgid "Album, EP oder Single, auf der der Track erschienen ist"
 msgstr ""
 
-#: taggerform.pas:433
+#: taggerform.pas:435
 msgid "Album-Interpret"
 msgstr ""
 
-#: taggerform.pas:1652
+#: taggerform.pas:1660
 msgid "Audio, Stems und Traktors eigene Daten (auch in MP3s) bleiben immer unverändert, neu geschrieben werden nur die Tags."
 msgstr ""
 
-#: taggerform.pas:437
+#: taggerform.pas:439
 msgid "BPM"
 msgstr ""
 
-#: taggerform.pas:1771
+#: taggerform.pas:1779
 msgid "BPM „%s“ bei %s ist ungültig. Bitte eine ganze Zahl von %d bis %d eingeben oder das Feld leeren."
 msgstr ""
 
-#: taggerform.pas:1648
+#: taggerform.pas:1656
 msgid "Beim Laden wird nichts verändert. In die Dateien geschrieben wird erst mit „Speichern“, und nur bei Dateien mit Änderungen."
 msgstr ""
 
-#: taggerform.pas:738
+#: taggerform.pas:740
 msgid "Benachbarte Zahlen passen beim Mixen gut zusammen (z.B. 8A zu 7A, 9A und 8B)."
 msgstr ""
 
-#: taggerform.pas:677
+#: taggerform.pas:679
 msgid "Bild aus der Zwischenablage einfügen (Strg+V)"
 msgstr ""
 
-#: taggerform.pas:1733
+#: taggerform.pas:1741
 msgid "Bild kann nicht gelesen werden:%s%s"
 msgstr ""
 
-#: taggerform.pas:673
+#: taggerform.pas:675
 msgid "Bild..."
 msgstr ""
 
-#: taggerform.pas:2066
+#: taggerform.pas:2074
 msgid "Bilder"
 msgstr ""
 
-#: taggerform.pas:442 taggerform.pas:762
+#: taggerform.pas:444 taggerform.pas:764
 msgid "Cover"
 msgstr ""
 
-#: taggerform.pas:2172
+#: taggerform.pas:2180
 msgid "Cover speichern"
 msgstr ""
 
-#: taggerform.pas:2065
+#: taggerform.pas:2073
 msgid "Cover-Bild wählen"
 msgstr ""
 
-#: taggerform.pas:2145
+#: taggerform.pas:2153
 msgid "Das Bild aus der Zwischenablage kann nicht gelesen werden."
 msgstr ""
 
-#: taggerform.pas:761
+#: taggerform.pas:763
 msgid "Datei"
 msgstr ""
 
-#: taggerform.pas:1978
+#: taggerform.pas:1986
 msgid "Dateien öffnen"
 msgstr ""
 
-#: taggerform.pas:580
+#: taggerform.pas:582
 msgid "Dateien..."
 msgstr ""
 
-#: taggerform.pas:623
+#: taggerform.pas:625
 msgid "Die Kopie wird nie überschrieben, sie bleibt also das echte Original."
 msgstr ""
 
-#: taggerform.pas:737
+#: taggerform.pas:739
 msgid "Die Liste zeigt alle drei, gespeichert wird die klassische (z.B. Am)."
 msgstr ""
 
-#: taggerform.pas:1741
+#: taggerform.pas:1749
 msgid "Dieses Bildformat wird nicht unterstützt. Bitte JPEG, PNG, BMP oder GIF verwenden."
 msgstr ""
 
-#: taggerform.pas:779
+#: taggerform.pas:787
 msgid "Doppelklick auf den Rand passt die Spalte an den Text an"
 msgstr ""
 
-#: taggerform.pas:674
+#: taggerform.pas:676
 msgid "Einfügen"
 msgstr ""
 
-#: taggerform.pas:582 taggerform.pas:675
+#: taggerform.pas:584 taggerform.pas:677
 msgid "Entfernen"
 msgstr ""
 
-#: taggerform.pas:725
+#: taggerform.pas:727
 msgid "Erscheinungsjahr, z.B. 2016"
 msgstr ""
 
-#: taggerform.pas:732
+#: taggerform.pas:734
 msgid "Es gibt drei übliche Schreibweisen für dieselbe Tonart:"
 msgstr ""
 
-#: taggerform.pas:2303
+#: taggerform.pas:2311
 msgid "Es gibt ungespeicherte Änderungen. Jetzt speichern?"
 msgstr ""
 
-#: taggerform.pas:2050
+#: taggerform.pas:2058
 msgid "Es gibt ungespeicherte Änderungen. Liste trotzdem leeren?"
 msgstr ""
 
-#: taggerform.pas:1829
+#: taggerform.pas:1837
 msgid "Fehler: "
 msgstr ""
 
-#: taggerform.pas:1799
+#: taggerform.pas:1807
 msgid "Fehler: Sicherungskopie nicht möglich"
 msgstr ""
 
-#: taggerform.pas:740
+#: taggerform.pas:742
 msgid "Freier Text, z.B. Notizen fürs Auflegen"
 msgstr ""
 
-#: taggerform.pas:434 taggerform.pas:762
+#: taggerform.pas:436 taggerform.pas:764
 msgid "Genre"
 msgstr ""
 
-#: taggerform.pas:1824
+#: taggerform.pas:1832
 msgid "Gespeichert"
 msgstr ""
 
-#: taggerform.pas:627
+#: taggerform.pas:629
 msgid "Grosse Cover auf %d px verkleinern"
 msgstr ""
 
-#: taggerform.pas:1311
+#: taggerform.pas:1319
 msgid "Im Ordner wurden keine Stem- oder MP3-Dateien gefunden:%s%s"
 msgstr ""
 
-#: taggerform.pas:2129
+#: taggerform.pas:2137
 msgid "In der Zwischenablage ist kein Bild."
 msgstr ""
 
-#: taggerform.pas:431 taggerform.pas:761
+#: taggerform.pas:433 taggerform.pas:763
 msgid "Interpret"
 msgstr ""
 
-#: taggerform.pas:722
+#: taggerform.pas:724
 msgid "Interpret des ganzen Albums, z.B. „Various Artists“ bei Compilations."
 msgstr ""
 
-#: taggerform.pas:741
+#: taggerform.pas:743
 msgid "Interpret/Titel aus Dateiname"
 msgstr ""
 
-#: taggerform.pas:435
+#: taggerform.pas:437
 msgid "Jahr"
 msgstr ""
 
-#: taggerform.pas:1783
+#: taggerform.pas:1791
 msgid "Jetzt speichern?"
 msgstr ""
 
-#: taggerform.pas:609 taggerform.pas:1622
+#: taggerform.pas:611 taggerform.pas:1630
 msgid "Kaffee spendieren"
 msgstr ""
 
-#: taggerform.pas:1368
+#: taggerform.pas:1376
 msgid "Keine Stem-Datei"
 msgstr ""
 
-#: taggerform.pas:777
+#: taggerform.pas:785
 msgid "Klick sortiert, nochmal klicken sortiert umgekehrt"
 msgstr ""
 
-#: taggerform.pas:440
+#: taggerform.pas:442
 msgid "Kommentar"
 msgstr ""
 
-#: taggerform.pas:720
+#: taggerform.pas:722
 msgid "Künstler oder Band, z.B. „Kungs“"
 msgstr ""
 
-#: taggerform.pas:439
+#: taggerform.pas:441
 msgid "Label"
 msgstr ""
 
-#: taggerform.pas:723
+#: taggerform.pas:725
 msgid "Leer lassen, wenn er gleich ist wie der Interpret."
 msgstr ""
 
-#: taggerform.pas:622
+#: taggerform.pas:624
 msgid "Legt vor dem ersten Speichern eine Kopie der Originaldatei an (Name.stem.mp4.bak)."
 msgstr ""
 
-#: taggerform.pas:583
+#: taggerform.pas:585
 msgid "Liste leeren"
 msgstr ""
 
-#: taggerform.pas:1429
+#: taggerform.pas:1437
 msgid "MP3 OK"
 msgstr ""
 
-#: taggerform.pas:1427
+#: taggerform.pas:1435
 msgid "MP3 OK, mit Traktor-Daten"
 msgstr ""
 
-#: taggerform.pas:1981
+#: taggerform.pas:1989
 msgid "MP3-Dateien"
 msgstr ""
 
-#: taggerform.pas:1982
+#: taggerform.pas:1990
 msgid "MP4-Dateien"
 msgstr ""
 
-#: taggerform.pas:724
+#: taggerform.pas:726
 msgid "Musikstil: aus der Liste wählen oder selbst eintippen"
 msgstr ""
 
-#: taggerform.pas:719
+#: taggerform.pas:721
 msgid "Name des Tracks, z.B. „Clap Your Hands“"
 msgstr ""
 
-#: taggerform.pas:1782
+#: taggerform.pas:1790
 msgid "Neu geschrieben werden nur die geänderten Tags, Audio, Stems und Traktor-Daten bleiben unverändert."
 msgstr ""
 
-#: taggerform.pas:1345 taggerform.pas:1364 taggerform.pas:1376
+#: taggerform.pas:1353 taggerform.pas:1372 taggerform.pas:1384
 msgid "Nicht lesbar"
 msgstr ""
 
-#: taggerform.pas:1653
+#: taggerform.pas:1661
 msgid "Nicht mehr anzeigen"
 msgstr ""
 
-#: taggerform.pas:726
+#: taggerform.pas:728
 msgid "Nummer auf dem Album, z.B. 3 oder 3/12 (Track 3 von 12)"
 msgstr ""
 
-#: taggerform.pas:1351
+#: taggerform.pas:1359
 msgid "Nur lesen (alter oder beschädigter ID3-Tag)"
 msgstr ""
 
-#: taggerform.pas:1425
+#: taggerform.pas:1433
 msgid "Ohne Cover"
 msgstr ""
 
-#: taggerform.pas:1422
+#: taggerform.pas:1430
 msgid "Ohne Tags"
 msgstr ""
 
-#: taggerform.pas:1420
+#: taggerform.pas:1428
 msgid "Ohne Tags und Cover"
 msgstr ""
 
-#: taggerform.pas:1646
+#: taggerform.pas:1654
 msgid "Ordner geladen"
 msgstr ""
 
-#: taggerform.pas:2006
+#: taggerform.pas:2014
 msgid "Ordner mit Stem- oder MP3-Dateien wählen (mit Unterordnern)"
 msgstr ""
 
-#: taggerform.pas:581
+#: taggerform.pas:583
 msgid "Ordner..."
 msgstr ""
 
-#: taggerform.pas:739
+#: taggerform.pas:741
 msgid "Plattenfirma, die den Track veröffentlicht hat"
 msgstr ""
 
-#: taggerform.pas:778
+#: taggerform.pas:786
 msgid "Rand zwischen zwei Spalten ziehen ändert die Breite"
 msgstr ""
 
-#: taggerform.pas:621
+#: taggerform.pas:623
 msgid "Sicherungskopie anlegen (.bak)"
 msgstr ""
 
-#: taggerform.pas:1791
+#: taggerform.pas:1799
 msgid "Speichere %s ..."
 msgstr ""
 
-#: taggerform.pas:592
+#: taggerform.pas:594
 msgid "Speichern"
 msgstr ""
 
-#: taggerform.pas:676
+#: taggerform.pas:678
 msgid "Speichern..."
 msgstr ""
 
-#: taggerform.pas:763
+#: taggerform.pas:765
 msgid "Status"
 msgstr ""
 
-#: taggerform.pas:1431
+#: taggerform.pas:1439
 msgid "Stem OK (%d Spuren)"
 msgstr ""
 
-#: taggerform.pas:1979
+#: taggerform.pas:1987
 msgid "Stem- und MP3-Dateien"
 msgstr ""
 
-#: taggerform.pas:1980
+#: taggerform.pas:1988
 msgid "Stem-Dateien"
 msgstr ""
 
-#: taggerform.pas:1451
+#: taggerform.pas:1459
 msgid "Stem-Dateien, MP3s oder Ordner hierher ziehen"
 msgstr ""
 
-#: taggerform.pas:727
+#: taggerform.pas:729
 msgid "Tempo in Schlägen pro Minute, nur ganze Zahlen von %d bis %d, z.B. 128."
 msgstr ""
 
-#: taggerform.pas:430 taggerform.pas:761
+#: taggerform.pas:432 taggerform.pas:763
 msgid "Titel"
 msgstr ""
 
-#: taggerform.pas:438
+#: taggerform.pas:440
 msgid "Tonart"
 msgstr ""
 
-#: taggerform.pas:730
+#: taggerform.pas:732
 msgid "Tonart des Tracks: aus der Liste wählen oder selbst eintippen."
 msgstr ""
 
-#: taggerform.pas:436
+#: taggerform.pas:438
 msgid "Track-Nr."
 msgstr ""
 
-#: taggerform.pas:763
+#: taggerform.pas:765
 msgid "Traktor"
 msgstr ""
 
-#: taggerform.pas:729
+#: taggerform.pas:731
 msgid "Traktor misst das Tempo beim Analysieren ohnehin selbst."
 msgstr ""
 
-#: taggerform.pas:2267
+#: taggerform.pas:2275
 msgid "Zuerst die Dateien markieren, die dieses Cover bekommen sollen."
 msgstr ""
 
-#: taggerform.pas:1413
+#: taggerform.pas:1421
 msgid "geändert"
 msgstr ""
 
-#: taggerform.pas:1401 taggerform.pas:1407
+#: taggerform.pas:1409 taggerform.pas:1415
 msgid "ja"
 msgstr ""
 
-#: taggerform.pas:1672
+#: taggerform.pas:1680
 msgid "kein Cover"
 msgstr ""
 
-#: taggerform.pas:591
+#: taggerform.pas:593
 msgid "Änderungen verwerfen"
 msgstr ""
 
