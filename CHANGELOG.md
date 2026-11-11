@@ -8,6 +8,11 @@ Bis Version 1.0.1 wurde der StemTagger als AddOn im Repository [Elospeed/StemMak
 
 ---
 
+## 1.2.2 – Japanische Spaltenköpfe (11. November 2026)
+
+### Verbessert
+- **Japanisch:** Die Spaltenköpfe der Liste stehen jetzt in normaler Schrift. Fett und klein waren die Kanji (z. B. 状態) kaum lesbar. Andere Sprachen sehen aus wie bisher. Dieselbe Version steckt in StemMaker 2.3.
+
 ## 1.2.1 – Linux-Fenster (8. November 2026)
 
 ### Behoben
