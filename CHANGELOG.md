@@ -8,6 +8,16 @@ Bis Version 1.0.1 wurde der StemTagger als AddOn im Repository [Elospeed/StemMak
 
 ---
 
+## 1.2.3 – Hell oder dunkel, Hilfe (15. November 2026)
+
+### Neu
+- **Hell oder dunkel:** Der StemTagger folgt der StemMaker-Einstellung „Design“ (Automatisch wie Windows, Hell, Dunkel). Ohne StemMaker gilt der Windows-„Standard-App-Modus“. Im hellen Design sind Flächen hell, die Schrift dunkel und die Statusfarben kräftiger, damit sie lesbar bleiben. Unter Linux ist „Automatisch“ hell.
+- **Dunkle Titelleiste:** Im dunklen Design sind Titelleiste und Fensterrahmen dunkel wie das Fenster statt weiss (Windows 10 ab 1809 und Windows 11).
+- **Hilfe:** Der Knopf **?** und die Taste **F1** öffnen das StemTagger-Kapitel der bebilderten Anleitung, aus dem Ordner `hilfe\` von StemMaker oder sonst online. Dieselbe Version steckt in StemMaker 2.4.
+
+### Entwicklung
+- `src/udunklerrahmen.pas` und `src/uhilfe.pas` neu (Kopien aus StemMaker), `src/uwine.pas` auf dem Stand von StemMaker 2.4. Quelltext ausführlich dokumentiert (Unit-Kopf mit Stand und Änderungen, Kommentarblock vor jeder Prozedur).
+
 ## 1.2.2 – Japanische Spaltenköpfe (11. November 2026)
 
 ### Verbessert

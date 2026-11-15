@@ -4,7 +4,7 @@
 
 🇬🇧 **English guide:** [README.md](README.md) · 🌐 **Projektseite:** [elospeed.github.io/StemTagger](https://elospeed.github.io/StemTagger/de/)
 
-Setzt Titel, Interpret, Album, Genre, Jahr, Label, Kommentar und Cover in **Traktor-Stem-Dateien (`*.stem.mp4`)** und **MP3-Dateien**, also das, was Traktor und Mixxx anzeigen und wonach man dort sucht. Auch für viele Dateien auf einmal, in einem dunklen, kompakten Fenster.
+Setzt Titel, Interpret, Album, Genre, Jahr, Label, Kommentar und Cover in **Traktor-Stem-Dateien (`*.stem.mp4`)** und **MP3-Dateien**, also das, was Traktor und Mixxx anzeigen und wonach man dort sucht. Auch für viele Dateien auf einmal, in einem kompakten Fenster, hell oder dunkel.
 
 **Warum ein eigenes Programm?** Normale Tag-Editoren schreiben eine Stem-Datei beim Speichern manchmal so um, dass Traktor sie danach nur noch als normalen Track lädt. Der StemTagger ändert nur die Tag-Liste in der Datei. Die 5 Audiospuren und die Stem-Daten (Namen und Farben der Stems) bleiben Byte für Byte gleich. Vor dem Ersetzen wird die neue Datei geprüft (gleiche Spurenzahl, gleiche Stem-Daten). Klappt etwas nicht, bleibt das Original unverändert. Getestet in Traktor Pro 4 und Mixxx 2.6 Beta.
 
@@ -18,6 +18,8 @@ Der StemTagger gehört zur Familie von [Elospeed StemMaker](https://github.com/E
 - **Genre mit Auswahlliste:** rund 50 Musikstile oder selbst eintippen (wird beim Tippen ergänzt).
 - **Fehlendes auf einen Blick:** Die Spalte Status zeigt „Ohne Tags“ oder „Ohne Cover“, Klick auf eine Spaltenüberschrift sortiert.
 - **Interpret/Titel aus Dateiname:** `Kungs - Clap Your Hands.stem.mp4` ergibt Interpret und Titel.
+- **Hell oder dunkel (ab 1.2.3):** wie Windows („Standard-App-Modus“), mit StemMaker wie dessen Einstellung „Design“. Im dunklen Design ist auch die Titelleiste dunkel (Windows 10 ab 1809, Windows 11).
+- **Hilfe (ab 1.2.3):** Der Knopf **?** und die Taste **F1** öffnen das StemTagger-Kapitel der bebilderten [Anleitung](https://elospeed.github.io/StemMaker/hilfe/de.html#stemtagger).
 - Auf Wunsch Sicherungskopie `<Datei>.bak` vor dem ersten Speichern.
 - Deutsch, Englisch und Spanisch; ab 1.2 auch Französisch, Portugiesisch (Brasilien), Italienisch, Japanisch, Niederländisch und Polnisch (maschinelle Entwürfe, noch nicht von Muttersprachlern gegengelesen).
 
