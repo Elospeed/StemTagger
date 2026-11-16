@@ -4,7 +4,7 @@
 
 🇩🇪 **Deutsche Anleitung:** [LIESMICH.md](LIESMICH.md) · 🌐 **Project page:** [elospeed.github.io/StemTagger](https://elospeed.github.io/StemTagger/)
 
-Sets title, artist, album, genre, year, label, comment and cover art in **Traktor stem files (`*.stem.mp4`)** and **MP3 files**, the things Traktor and Mixxx show and search for. Many files at once, with a dark, compact window.
+Sets title, artist, album, genre, year, label, comment and cover art in **Traktor stem files (`*.stem.mp4`)** and **MP3 files**, the things Traktor and Mixxx show and search for. Many files at once, in a compact window, light or dark.
 
 **Why a separate tool?** Regular tag editors sometimes rewrite a stem file in a way that makes Traktor load it as a normal track afterwards. StemTagger only changes the tag list inside the file. The 5 audio tracks and the stem data (names and colours of the stems) stay byte for byte the same. The new file is checked before it replaces the original (same track count, same stem data). If anything goes wrong, the original stays untouched. Tested in Traktor Pro 4 and Mixxx 2.6 beta.
 
@@ -18,6 +18,8 @@ StemTagger is part of the [Elospeed StemMaker](https://github.com/Elospeed/StemM
 - **Genre list** with about 50 styles, or type your own (auto-complete).
 - **Missing data at a glance:** the Status column shows "No tags" or "No cover"; click a column header to sort.
 - **Artist/title from file name:** `Kungs - Clap Your Hands.stem.mp4` gives artist and title.
+- **Light or dark (since 1.2.3):** follows Windows ("default app mode"), or StemMaker's "Theme" setting when StemMaker is installed. In the dark design the title bar is dark too (Windows 10 1809 or newer, Windows 11).
+- **Help (since 1.2.3):** the **?** button and the **F1** key open the StemTagger chapter of the illustrated [user guide](https://elospeed.github.io/StemMaker/hilfe/en.html#stemtagger).
 - Optional backup copy `<file>.bak` before the first save.
 - German, English and Spanish; since 1.2 also French, Portuguese (Brazil), Italian, Japanese, Dutch and Polish (machine drafts, not yet proofread by native speakers).
 
