@@ -85,7 +85,7 @@
 <section class="hero">
   <div class="wrap">
     <h1>Tags und Cover für deine<br><span class="grad">Traktor-Stems</span> und MP3s</h1>
-    <p class="lead">Der StemTagger setzt Titel, Interpret, Album, Genre und Cover in <code>.stem.mp4</code>- und MP3-Dateien, für einen Track oder einen ganzen Ordner auf einmal. Geändert werden nur die Tags: Die Stems, das Audio und Traktors Cue-Punkte bleiben genau so, wie sie waren. Ein kleines, portables Windows-Programm, kostenlos und Open Source.</p>
+    <p class="lead">Setzt Titel, Interpret, Album, Genre und Cover in <code>.stem.mp4</code>- und MP3-Dateien, für einen ganzen Ordner auf einmal. Die Stems, das Audio und Traktors Cue-Punkte bleiben unverändert.</p>
     <div class="cta">
       <a class="btn primary" href="https://github.com/Elospeed/StemTagger/releases/latest">⬇ Download für Windows</a>
       <a class="btn" href="https://github.com/Elospeed/StemTagger">Quellcode auf GitHub</a>
@@ -107,15 +107,14 @@
 
 <section id="funktionen" class="alt">
   <div class="wrap">
-    <h2>Saubere Tags, ohne die Stems zu gefährden</h2>
-    <p class="sub">Normale Tag-Editoren schreiben eine Stem-Datei beim Speichern manchmal so um, dass Traktor sie danach nur noch als normalen Track lädt. Der StemTagger ist genau für diese Dateien gemacht.</p>
+    <h2>Was der StemTagger kann</h2>
     <div class="grid">
-      <div class="card"><h3><span class="dot" style="background:var(--drums)"></span>Die Stems bleiben unangetastet</h3><p>Nur die Tag-Liste in der Datei ändert sich. Die fünf Audiospuren und die Stem-Daten (Namen und Farben) bleiben Byte für Byte gleich. Die neue Datei wird geprüft, bevor sie das Original ersetzt; stimmt etwas nicht, bleibt das Original, wie es war.</p></div>
-      <div class="card"><h3><span class="dot" style="background:var(--bass)"></span>MP3 mit Traktor-Daten</h3><p>Seit Version 1.1 bearbeitet der StemTagger auch MP3s, mit eigenem ID3-Code. Traktors Cue-Punkte, Loops, Beatgrid und Analyse bleiben erhalten, und eine Spalte zeigt, welche MP3s Traktor schon analysiert hat.</p></div>
-      <div class="card"><h3><span class="dot" style="background:var(--other)"></span>Viele Dateien auf einmal</h3><p>Dateien oder ganze Ordner hineinziehen (mit Unterordnern), mehrere Zeilen markieren und Album, Genre oder Cover für alle setzen. Felder mit unterschiedlichen Werten zeigen <code>&lt;verschieden&gt;</code> und bleiben pro Datei erhalten, bis du sie änderst.</p></div>
-      <div class="card"><h3><span class="dot" style="background:var(--vox)"></span>Cover ganz bequem</h3><p>Bild aufs Fenster ziehen, im Browser kopieren und mit Strg+V einfügen oder eine Datei wählen. JPEG und PNG bleiben unverändert, grosse Bilder lassen sich auf 1000 Pixel verkleinern, und ein Cover lässt sich auch wieder als Bild speichern.</p></div>
-      <div class="card"><h3><span class="dot" style="background:var(--other)"></span>Fehlendes auf einen Blick</h3><p>Die Spalte Status zeigt „Ohne Tags“ oder „Ohne Cover“, die Spalten Cover und Traktor zeigen, was schon da ist. Ein Klick auf die Spaltenüberschrift sortiert, und die Lücken in deiner Sammlung stehen ganz oben.</p></div>
-      <div class="card"><h3><span class="dot" style="background:var(--drums)"></span>Kleine Helfer</h3><p>Eine Genre-Liste mit rund 50 Stilen, die beim Tippen ergänzt, Interpret und Titel direkt aus dem Dateinamen (<code>Interpret - Titel.stem.mp4</code>) und auf Wunsch eine Sicherungskopie vor dem ersten Speichern. Das Fenster spricht neun Sprachen, passend zu Windows, ist hell oder dunkel wie Windows (oder wie StemMaker), und der Knopf ? oder F1 öffnet die bebilderte Anleitung.</p></div>
+      <div class="card"><h3><span class="dot" style="background:var(--drums)"></span>Stems bleiben unverändert</h3><p>Nur die Tags ändern sich, Audio und Stem-Daten bleiben Byte für Byte gleich.</p></div>
+      <div class="card"><h3><span class="dot" style="background:var(--bass)"></span>MP3 mit Traktor-Daten</h3><p>Cue-Punkte, Loops, Beatgrid und Analyse bleiben erhalten.</p></div>
+      <div class="card"><h3><span class="dot" style="background:var(--other)"></span>Viele Dateien auf einmal</h3><p>Ordner samt Unterordnern, Album, Genre oder Cover für alle markierten Tracks setzen.</p></div>
+      <div class="card"><h3><span class="dot" style="background:var(--vox)"></span>Cover ganz einfach</h3><p>Bild reinziehen, mit Ctrl+V einfügen oder Datei wählen.</p></div>
+      <div class="card"><h3><span class="dot" style="background:var(--other)"></span>Lücken auf einen Blick</h3><p>Die Statusspalte zeigt „Ohne Tags“ oder „Ohne Cover“; sortieren und die Lücken stehen oben.</p></div>
+      <div class="card"><h3><span class="dot" style="background:var(--drums)"></span>Kleine Helfer</h3><p>Genre-Liste, Interpret und Titel aus dem Dateinamen, Sicherungskopie auf Wunsch, neun Sprachen, hell oder dunkel, Hilfe auf F1.</p></div>
     </div>
   </div>
 </section>
@@ -123,16 +122,12 @@
 <section id="mp3">
   <div class="wrap split">
     <div>
-      <span class="badge">Neu in 1.1</span>
       <h2>MP3s, und Traktors Cue-Punkte bleiben</h2>
-      <p class="sub" style="margin-bottom:0">Traktor speichert Cue-Punkte, Loops und Beatgrid direkt in der MP3. Viele Programme werfen diese Daten beim Speichern weg. Der StemTagger nicht.</p>
       <ul class="ticks">
-        <li><strong>Ersetzt werden nur die geänderten Felder</strong>: Audio und alles andere im Tag bleiben Byte für Byte gleich, auch Traktors eigener Eintrag (<code>TRAKTOR4</code>) mit Cue-Punkten, Loops, Beatgrid und Analyse</li>
-        <li><strong>Spalte „Traktor“</strong>: zeigt auf einen Blick, welche MP3s Traktor schon analysiert hat</li>
-        <li><strong>Dieselben Felder wie bei Stem-Dateien</strong>: Titel, Interpret, Album, Genre, Jahr, Label, Kommentar und Cover, in der ID3-Version der Datei (2.3 oder 2.4)</li>
-        <li><strong>Getestet mit Traktor Pro 4</strong>: MP3 mit Cue-Punkten, Markern und Loop mit dem StemTagger getaggt und neu geladen, alles noch da</li>
-        <li>Sehr alte oder beschädigte Tags werden angezeigt, aber nie verändert („Nur lesen“)</li>
-      </ul>
+      <li><strong>Nur geänderte Felder werden ersetzt</strong>, Traktors Cue-Punkte, Loops und Beatgrid bleiben</li>
+      <li><strong>Spalte Traktor</strong> zeigt, welche MP3s Traktor schon analysiert hat</li>
+      <li><strong>Getestet in Traktor Pro 4</strong></li>
+    </ul>
     </div>
     <figure class="shot">
       <div class="bar"><img src="../img/icon-32.png" alt=""><span>Elospeed StemTagger 1.2.3</span><i class="min"></i><i class="max"></i><i class="cls"></i></div>
@@ -144,11 +139,10 @@
 <section id="so-gehts" class="alt">
   <div class="wrap">
     <h2>So geht's</h2>
-    <p class="sub">Drei Schritte, ohne Installation.</p>
     <ol class="steps">
-      <li><strong>Herunterladen und entpacken</strong><code>StemTagger-&lt;Version&gt;.zip</code> von GitHub laden, irgendwohin entpacken und <code>StemTagger.exe</code> starten. Der Ordner <code>lang</code> muss daneben bleiben.</li>
-      <li><strong>Tracks hineinziehen</strong><code>.stem.mp4</code>-Dateien, MP3s oder ganze Ordner ins Fenster ziehen. Eine oder mehrere Zeilen markieren und unten die Felder ausfüllen, Cover inklusive.</li>
-      <li><strong>Speichern</strong>Auf Speichern klicken (oder Strg+S). Geschrieben werden nur geänderte Dateien. Danach in Traktor oder Mixxx neu einlesen, und die neuen Tags sind da.</li>
+      <li><strong>Entpacken</strong>Portable ZIP, <code>StemTagger.exe</code> starten.</li>
+      <li><strong>Tracks reinziehen</strong>Stem-Dateien, MP3s oder ganze Ordner, dann die Felder ausfüllen.</li>
+      <li><strong>Speichern</strong>Ctrl+S schreibt nur die geänderten Dateien.</li>
     </ol>
   </div>
 </section>
@@ -158,7 +152,7 @@
     <h2>Gehört zur StemMaker-Familie</h2>
     <div class="family">
       <img src="../img/stemmaker-icon-32.png" alt="" width="48" height="48">
-      <p><a href="https://elospeed.github.io/StemMaker/de/"><strong>Elospeed StemMaker</strong></a> macht aus deinen eigenen MP3s Traktor-Stem-Dateien und hat den StemTagger schon als AddOn dabei: ein Klick in der AddOn-Leiste oder Rechtsklick auf eine Datei und „Tags bearbeiten...“. Du hast schon Stem-Dateien und brauchst nur die Tags? Dann reicht der StemTagger allein.</p>
+      <p><a href="https://elospeed.github.io/StemMaker/de/"><strong>Elospeed StemMaker</strong></a> macht aus MP3s Traktor-Stem-Dateien und hat den StemTagger als AddOn dabei.</p>
     </div>
   </div>
 </section>

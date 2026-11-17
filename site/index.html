@@ -85,7 +85,7 @@
 <section class="hero">
   <div class="wrap">
     <h1>Tags and covers for your<br><span class="grad">Traktor stems</span> and MP3s</h1>
-    <p class="lead">StemTagger sets title, artist, album, genre and cover art in <code>.stem.mp4</code> and MP3 files, for one track or a whole folder at once. Only the tags are rewritten: the stems, the audio and Traktor's cue points stay exactly as they were. One small, portable Windows program, free and open source.</p>
+    <p class="lead">Sets title, artist, album, genre and cover in <code>.stem.mp4</code> and MP3 files, for a whole folder at once. The stems, the audio and Traktor's cue points stay untouched.</p>
     <div class="cta">
       <a class="btn primary" href="https://github.com/Elospeed/StemTagger/releases/latest">⬇ Download for Windows</a>
       <a class="btn" href="https://github.com/Elospeed/StemTagger">View source on GitHub</a>
@@ -107,15 +107,14 @@
 
 <section id="features" class="alt">
   <div class="wrap">
-    <h2>Tidy tags without risking your stems</h2>
-    <p class="sub">Regular tag editors sometimes rewrite a stem file in a way that makes Traktor load it as a normal track afterwards. StemTagger was made for exactly these files.</p>
+    <h2>What StemTagger does</h2>
     <div class="grid">
-      <div class="card"><h3><span class="dot" style="background:var(--drums)"></span>The stems stay untouched</h3><p>Only the tag list inside the file changes. The five audio tracks and the stem data (names and colours) stay byte for byte the same. The new file is checked before it replaces the original; if anything is off, the original stays as it was.</p></div>
-      <div class="card"><h3><span class="dot" style="background:var(--bass)"></span>MP3 with Traktor data</h3><p>Since version 1.1 StemTagger also edits MP3s with its own ID3 code. Traktor's cue points, loops, beatgrid and analysis are kept, and a column shows which MP3s Traktor has already analysed.</p></div>
-      <div class="card"><h3><span class="dot" style="background:var(--other)"></span>Many files at once</h3><p>Drop files or whole folders (subfolders included), select several rows and set the album, genre or cover for all of them. Fields with different values show <code>&lt;different&gt;</code> and stay per file until you change them.</p></div>
-      <div class="card"><h3><span class="dot" style="background:var(--vox)"></span>Cover made easy</h3><p>Drag an image onto the window, paste one copied in the browser with Ctrl+V or pick a file. JPEG and PNG stay as they are, large images can be scaled down to 1000 px, and a cover can be saved as an image again.</p></div>
-      <div class="card"><h3><span class="dot" style="background:var(--other)"></span>Missing data at a glance</h3><p>The status column shows “No tags” or “No cover”, the Cover and Traktor columns show what is there. Click a column header to sort, and the gaps in your collection are right at the top.</p></div>
-      <div class="card"><h3><span class="dot" style="background:var(--drums)"></span>Quick helpers</h3><p>A genre list with about 50 styles that completes as you type, artist and title straight from the file name (<code>Artist - Title.stem.mp4</code>) and an optional backup copy before the first save. The window speaks nine languages, picked from Windows, comes light or dark like Windows (or like StemMaker), and the ? button or F1 opens the illustrated guide.</p></div>
+      <div class="card"><h3><span class="dot" style="background:var(--drums)"></span>Stems stay untouched</h3><p>Only the tags change, audio and stem data stay byte for byte the same.</p></div>
+      <div class="card"><h3><span class="dot" style="background:var(--bass)"></span>MP3 with Traktor data</h3><p>Cue points, loops, beatgrid and analysis are kept.</p></div>
+      <div class="card"><h3><span class="dot" style="background:var(--other)"></span>Many files at once</h3><p>Folders and subfolders, set album, genre or cover for all selected tracks.</p></div>
+      <div class="card"><h3><span class="dot" style="background:var(--vox)"></span>Cover made easy</h3><p>Drag an image in, paste with Ctrl+V or pick a file.</p></div>
+      <div class="card"><h3><span class="dot" style="background:var(--other)"></span>Missing data at a glance</h3><p>Status column shows “No tags” or “No cover”; sort to find the gaps.</p></div>
+      <div class="card"><h3><span class="dot" style="background:var(--drums)"></span>Quick helpers</h3><p>Genre list, artist and title from the file name, optional backup, nine languages, light or dark, help on F1.</p></div>
     </div>
   </div>
 </section>
@@ -123,16 +122,12 @@
 <section id="mp3">
   <div class="wrap split">
     <div>
-      <span class="badge">New in 1.1</span>
       <h2>MP3s, with Traktor's cue points kept</h2>
-      <p class="sub" style="margin-bottom:0">Traktor stores its cue points, loops and beatgrid inside the MP3 itself. Many tools drop that data when they save. StemTagger doesn't.</p>
       <ul class="ticks">
-        <li><strong>Only the changed fields are replaced</strong>: audio and everything else in the tag stay byte for byte the same, including Traktor's own entry (<code>TRAKTOR4</code>) with cue points, loops, beatgrid and analysis</li>
-        <li><strong>Traktor column</strong>: shows at a glance which MP3s Traktor has already analysed</li>
-        <li><strong>Same fields as for stem files</strong>: title, artist, album, genre, year, label, comment and cover, in the ID3 version of the file (2.3 or 2.4)</li>
-        <li><strong>Tested in Traktor Pro 4</strong>: an MP3 with cue points, markers and a loop, tagged with StemTagger and loaded again, everything still there</li>
-        <li>Very old or damaged tags are shown but never changed (“read only”)</li>
-      </ul>
+      <li><strong>Only changed fields are replaced</strong>, Traktor's cue points, loops and beatgrid stay</li>
+      <li><strong>Traktor column</strong> shows which MP3s Traktor has already analysed</li>
+      <li><strong>Tested in Traktor Pro 4</strong></li>
+    </ul>
     </div>
     <figure class="shot">
       <div class="bar"><img src="img/icon-32.png" alt=""><span>Elospeed StemTagger 1.2.3</span><i class="min"></i><i class="max"></i><i class="cls"></i></div>
@@ -144,11 +139,10 @@
 <section id="how" class="alt">
   <div class="wrap">
     <h2>How it works</h2>
-    <p class="sub">Three steps, no installation.</p>
     <ol class="steps">
-      <li><strong>Download and unzip</strong>Get <code>StemTagger-&lt;version&gt;.zip</code> from GitHub, unzip it anywhere and start <code>StemTagger.exe</code>. Keep the <code>lang</code> folder next to it.</li>
-      <li><strong>Drop your tracks in</strong>Drag <code>.stem.mp4</code> files, MP3s or whole folders into the window. Select one or more rows and fill in the fields below, cover included.</li>
-      <li><strong>Save</strong>Click Save (or Ctrl+S). Only files you changed are written. Then reload them in Traktor or Mixxx and the new tags show up.</li>
+      <li><strong>Unzip</strong>Portable ZIP, start <code>StemTagger.exe</code>.</li>
+      <li><strong>Drop your tracks in</strong>Stem files, MP3s or whole folders, then fill in the fields.</li>
+      <li><strong>Save</strong>Ctrl+S writes only the changed files.</li>
     </ol>
   </div>
 </section>
@@ -158,7 +152,7 @@
     <h2>Part of the StemMaker family</h2>
     <div class="family">
       <img src="img/stemmaker-icon-32.png" alt="" width="48" height="48">
-      <p><a href="https://elospeed.github.io/StemMaker/"><strong>Elospeed StemMaker</strong></a> turns your own MP3s into Traktor stem files and already ships StemTagger as an add-on: one click in the add-on bar, or right-click a file and choose “Edit tags...”. Already have stem files and only need the tags? Then the StemTagger download on its own is all you need.</p>
+      <p><a href="https://elospeed.github.io/StemMaker/"><strong>Elospeed StemMaker</strong></a> turns MP3s into Traktor stem files and includes StemTagger as an add-on.</p>
     </div>
   </div>
 </section>
