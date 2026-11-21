@@ -8,7 +8,7 @@ Bis Version 1.0.1 wurde der StemTagger als AddOn im Repository [Elospeed/StemMak
 
 ---
 
-## 1.3 – Linux hell oder dunkel (unveröffentlicht, mit StemMaker 2.5)
+## 1.3 – Linux hell oder dunkel (21. November 2026)
 
 ### Neu
 - **Linux:** Mit StemMaker 2.5 unter Linux folgt der StemTagger bei „Automatisch“ dem Desktop (hell oder dunkel), die Titelleiste ebenso.
