@@ -117,7 +117,7 @@ msgstr "Enregistrer la pochette"
 msgid "Cover-Bild wählen"
 msgstr "Choisir l'image de pochette"
 
-#: udankfenster.pas:95
+#: udankfenster.pas:96
 msgid "Danke fürs Update auf StemTagger %s!"
 msgstr "Merci pour la mise à jour vers StemTagger %s !"
 
@@ -233,7 +233,7 @@ msgstr "Année"
 msgid "Jetzt speichern?"
 msgstr "Enregistrer maintenant ?"
 
-#: taggerform.pas:707 taggerform.pas:1732 udankfenster.pas:130
+#: taggerform.pas:707 taggerform.pas:1732 udankfenster.pas:131
 msgid "Kaffee spendieren"
 msgstr "Offrir un café"
 
@@ -305,7 +305,7 @@ msgstr "Illisible"
 msgid "Nicht mehr anzeigen"
 msgstr "Ne plus afficher"
 
-#: udankfenster.pas:137
+#: udankfenster.pas:138
 msgid "Nicht mehr fragen"
 msgstr "Ne plus demander"
 
@@ -385,7 +385,7 @@ msgstr "Fichiers stem"
 msgid "Stem-Dateien, MP3s oder Ordner hierher ziehen"
 msgstr "Déposez ici des fichiers stem, des MP3 ou des dossiers"
 
-#: udankfenster.pas:108
+#: udankfenster.pas:109
 msgid "StemTagger bleibt gratis, ohne Abo und ohne Werbung. Ich entwickle es in meiner Freizeit, mit viel Zeit und Herzblut."
 msgstr "StemTagger reste gratuit, sans abonnement ni publicité. Je le développe sur mon temps libre, avec beaucoup de temps et de passion."
 
@@ -417,15 +417,15 @@ msgstr "Traktor"
 msgid "Traktor misst das Tempo beim Analysieren ohnehin selbst."
 msgstr "De toute façon, Traktor mesure lui-même le tempo lors de l'analyse."
 
-#: udankfenster.pas:113
+#: udankfenster.pas:114
 msgid "Und wenn nicht, ist das völlig in Ordnung. Viel Spass beim Auflegen!"
 msgstr "Et sinon, c'est tout à fait normal. Bon mix !"
 
-#: udankfenster.pas:124
+#: udankfenster.pas:125
 msgid "Weiter"
 msgstr "Continuer"
 
-#: udankfenster.pas:111
+#: udankfenster.pas:112
 msgid "Wenn StemTagger dir Zeit spart, hilft ein Kaffee, dass es weitergeht."
 msgstr "Si StemTagger vous fait gagner du temps, un café l'aide à continuer."
 

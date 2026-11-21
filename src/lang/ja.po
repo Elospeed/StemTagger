@@ -117,7 +117,7 @@ msgstr "カバーを保存"
 msgid "Cover-Bild wählen"
 msgstr "カバー画像を選択"
 
-#: udankfenster.pas:95
+#: udankfenster.pas:96
 msgid "Danke fürs Update auf StemTagger %s!"
 msgstr "StemTagger %s へのアップデートありがとうございます！"
 
@@ -233,7 +233,7 @@ msgstr "年"
 msgid "Jetzt speichern?"
 msgstr "今すぐ保存しますか?"
 
-#: taggerform.pas:707 taggerform.pas:1732 udankfenster.pas:130
+#: taggerform.pas:707 taggerform.pas:1732 udankfenster.pas:131
 msgid "Kaffee spendieren"
 msgstr "コーヒーをおごる"
 
@@ -305,7 +305,7 @@ msgstr "読み取れません"
 msgid "Nicht mehr anzeigen"
 msgstr "今後は表示しない"
 
-#: udankfenster.pas:137
+#: udankfenster.pas:138
 msgid "Nicht mehr fragen"
 msgstr "今後は表示しない"
 
@@ -385,7 +385,7 @@ msgstr "ステムファイル"
 msgid "Stem-Dateien, MP3s oder Ordner hierher ziehen"
 msgstr "ステムファイル、MP3、フォルダーをここにドラッグ"
 
-#: udankfenster.pas:108
+#: udankfenster.pas:109
 msgid "StemTagger bleibt gratis, ohne Abo und ohne Werbung. Ich entwickle es in meiner Freizeit, mit viel Zeit und Herzblut."
 msgstr "StemTagger はこれからも無料です。サブスクも広告もありません。私が自由時間に、たくさんの時間と情熱を注いで開発しています。"
 
@@ -417,15 +417,15 @@ msgstr "Traktor"
 msgid "Traktor misst das Tempo beim Analysieren ohnehin selbst."
 msgstr "Traktor は解析時にテンポを自分で測定します。"
 
-#: udankfenster.pas:113
+#: udankfenster.pas:114
 msgid "Und wenn nicht, ist das völlig in Ordnung. Viel Spass beim Auflegen!"
 msgstr "もちろん、しなくてもまったく問題ありません。DJ を楽しんでください!"
 
-#: udankfenster.pas:124
+#: udankfenster.pas:125
 msgid "Weiter"
 msgstr "続ける"
 
-#: udankfenster.pas:111
+#: udankfenster.pas:112
 msgid "Wenn StemTagger dir Zeit spart, hilft ein Kaffee, dass es weitergeht."
 msgstr "StemTagger で時間が節約できたなら、コーヒー一杯が開発を続ける力になります。"
 

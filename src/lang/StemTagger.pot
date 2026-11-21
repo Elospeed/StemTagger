@@ -117,7 +117,7 @@ msgstr ""
 msgid "Cover-Bild wählen"
 msgstr ""
 
-#: udankfenster.pas:95
+#: udankfenster.pas:96
 msgid "Danke fürs Update auf StemTagger %s!"
 msgstr ""
 
@@ -233,7 +233,7 @@ msgstr ""
 msgid "Jetzt speichern?"
 msgstr ""
 
-#: taggerform.pas:707 taggerform.pas:1732 udankfenster.pas:130
+#: taggerform.pas:707 taggerform.pas:1732 udankfenster.pas:131
 msgid "Kaffee spendieren"
 msgstr ""
 
@@ -305,7 +305,7 @@ msgstr ""
 msgid "Nicht mehr anzeigen"
 msgstr ""
 
-#: udankfenster.pas:137
+#: udankfenster.pas:138
 msgid "Nicht mehr fragen"
 msgstr ""
 
@@ -385,7 +385,7 @@ msgstr ""
 msgid "Stem-Dateien, MP3s oder Ordner hierher ziehen"
 msgstr ""
 
-#: udankfenster.pas:108
+#: udankfenster.pas:109
 msgid "StemTagger bleibt gratis, ohne Abo und ohne Werbung. Ich entwickle es in meiner Freizeit, mit viel Zeit und Herzblut."
 msgstr ""
 
@@ -417,15 +417,15 @@ msgstr ""
 msgid "Traktor misst das Tempo beim Analysieren ohnehin selbst."
 msgstr ""
 
-#: udankfenster.pas:113
+#: udankfenster.pas:114
 msgid "Und wenn nicht, ist das völlig in Ordnung. Viel Spass beim Auflegen!"
 msgstr ""
 
-#: udankfenster.pas:124
+#: udankfenster.pas:125
 msgid "Weiter"
 msgstr ""
 
-#: udankfenster.pas:111
+#: udankfenster.pas:112
 msgid "Wenn StemTagger dir Zeit spart, hilft ein Kaffee, dass es weitergeht."
 msgstr ""
 
