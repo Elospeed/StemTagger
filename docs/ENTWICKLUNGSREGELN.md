@@ -33,7 +33,7 @@ Alle Fenster müssen bei **100 %, 125 %, 150 % und 200 %** Windows-Skalierung ko
 - Keine Fremdbibliotheken mit unklarer Lizenz. Der StemTagger kommt mit Free Pascal / Lazarus allein aus; Tag-Formate (MP4, ID3v2) werden selbst gelesen und geschrieben.
 - Dateien der Benutzer nie direkt überschreiben: immer in eine Zwischendatei schreiben, prüfen und erst dann das Original ersetzen. Unbekannte Daten in der Datei (z. B. Traktors eigene Frames) bleiben unverändert erhalten.
 - Gemeinsame Units sind Kopien aus StemMaker (siehe [Entwicklungslog](ENTWICKLUNGSLOG.md)). Fixes dort hier nachziehen und umgekehrt.
-- Der Ko-fi-Knopf unten rechts bleibt (`DrawKofiButton` aus `src/ustatusdraw.pas`). Spenden-Hinweise nie im CHANGELOG oder in Release-Notizen.
+- Der Ko-fi-Knopf unten rechts bleibt (`DrawKofiButton` aus `src/ustatusdraw.pas`).
 
 ## Git und GitHub
 
