@@ -1,4 +1,4 @@
-# Elospeed StemTagger 1.2
+# Elospeed StemTagger 1.3
 
 **von Elospeed**
 
