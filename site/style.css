@@ -222,3 +222,15 @@ code { background: #0f1011; border: 1px solid var(--line); border-radius: 4px; p
 .family p { margin: 0; color: var(--muted); }
 .family p strong { color: var(--text); }
 @media (max-width: 560px) { .family { flex-direction: column; align-items: flex-start; } }
+
+/* ---- Danke-Seite nach dem Download ---- */
+.danke { padding: 64px 0 56px; text-align: center; }
+.danke h1 { font-size: clamp(28px, 4.4vw, 42px); line-height: 1.15; margin: 0 0 14px; letter-spacing: -.01em; }
+.danke .lead { color: var(--text); font-size: 19px; max-width: 620px; margin: 0 auto 26px; }
+.btn.kofi { background: #ff5e5b; border-color: #ff5e5b; color: #fff; }
+.btn.kofi:hover { background: #ff7d7a; border-color: #ff7d7a; color: #fff; }
+.danke .wer { max-width: 560px; margin: 26px auto 0; color: var(--muted); font-size: 15px; }
+.danke .wer strong { color: var(--text); }
+.danke .klein { margin: 30px auto 0; color: var(--muted); font-size: 14px; }
+.danke ol.steps { text-align: left; max-width: 900px; margin: 0 auto; }
+.danke ol.steps li { color: var(--muted); }

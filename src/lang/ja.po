@@ -5,423 +5,447 @@ msgstr ""
 "X-Source-Language: de\n"
 "Project-Id-Version: Elospeed StemTagger\n"
 
-#: taggerform.pas:825
+#: taggerform.pas:832
 msgid "  Camelot (Mixed In Key):  8A = a-Moll, 8B = C-Dur (A = Moll, B = Dur)"
 msgstr "  Camelot (Mixed In Key):  8A = イ短調、8B = ハ長調 (A = 短調、B = 長調)"
 
-#: taggerform.pas:824
+#: taggerform.pas:831
 msgid "  Klassisch:  Am = a-Moll, C = C-Dur (m = Moll, ohne m = Dur)"
 msgstr "  クラシック:  Am = イ短調、C = ハ長調 (m = 短調、m なし = 長調)"
 
-#: taggerform.pas:826
+#: taggerform.pas:833
 msgid "  Open Key (Traktor):  1m = a-Moll, 1d = C-Dur (m = Moll, d = Dur)"
 msgstr "  Open Key (Traktor):  1m = イ短調、1d = ハ長調 (m = 短調、d = 長調)"
 
-#: taggerform.pas:835
+#: taggerform.pas:842
 msgid "\"Interpret - Titel.stem.mp4\" füllt Interpret und Titel"
 msgstr "「アーティスト - タイトル.stem.mp4」からアーティストとタイトルを入力"
 
-#: taggerform.pas:2324
+#: taggerform.pas:2343
 msgid "%d Dateien aus dem Dateinamen übernommen - noch nicht gespeichert"
 msgstr "%d ファイルにファイル名から入力しました - まだ保存されていません"
 
-#: taggerform.pas:1941
+#: taggerform.pas:1955
 msgid "%d Dateien gespeichert"
 msgstr "%d ファイルを保存しました"
 
-#: taggerform.pas:1938
+#: taggerform.pas:1951
 msgid "%d Dateien gespeichert, %d mit Fehler. Die Dateien mit Fehler sind unverändert, Details in der Spalte Status."
 msgstr "%d ファイルを保存、%d ファイルでエラー。エラーのファイルは変更されていません。詳細は「状態」列を参照してください。"
 
-#: taggerform.pas:1744
+#: taggerform.pas:1757
 msgid "%d Dateien in der Liste."
 msgstr "リストに %d 個のファイル。"
 
-#: taggerform.pas:1878
+#: taggerform.pas:1891
 msgid "%d Dateien werden geändert."
 msgstr "%d ファイルが変更されます。"
 
-#: taggerform.pas:1550
+#: taggerform.pas:1563
 msgid "%d Dateien, %d geändert"
 msgstr "%d ファイル、%d 件変更"
 
-#: taggerform.pas:2127
+#: taggerform.pas:2146
 msgid "%d markierte Dateien haben ungespeicherte Änderungen. Trotzdem aus der Liste nehmen?"
 msgstr "選択した %d ファイルに未保存の変更があります。それでもリストから外しますか?"
 
-#: taggerform.pas:1622 taggerform.pas:1651
+#: taggerform.pas:1635 taggerform.pas:1664
 msgid "<verschieden>"
 msgstr "<複数の値>"
 
-#: taggerform.pas:1747
+#: taggerform.pas:1760
 msgid "Achtung bei Mehrfachauswahl: Sind mehrere Zeilen markiert, bekommen alle markierten Dateien den neuen Wert (z.B. alle dasselbe Album oder Cover). Felder mit „<verschieden>“ bleiben pro Datei erhalten, solange du sie nicht änderst."
 msgstr "複数選択にご注意ください: 複数の行を選択していると、選択したすべてのファイルに新しい値が設定されます (例: すべて同じアルバムやカバー)。「<複数の値>」と表示された項目は、変更しない限り各ファイルの値がそのまま残ります。"
 
-#: taggerform.pas:519 taggerform.pas:853
+#: taggerform.pas:526 taggerform.pas:860
 msgid "Album"
 msgstr "アルバム"
 
-#: taggerform.pas:812
+#: taggerform.pas:819
 msgid "Album, EP oder Single, auf der der Track erschienen ist"
 msgstr "トラックが収録されたアルバム、EP、シングル"
 
-#: taggerform.pas:520
+#: taggerform.pas:527
 msgid "Album-Interpret"
 msgstr "アルバムアーティスト"
 
-#: taggerform.pas:1749
+#: taggerform.pas:1762
 msgid "Audio, Stems und Traktors eigene Daten (auch in MP3s) bleiben immer unverändert, neu geschrieben werden nur die Tags."
 msgstr "オーディオ、ステム、Traktor 独自のデータ（MP3 内のものも含む）は常にそのまま残り、書き換えられるのはタグだけです。"
 
-#: taggerform.pas:524
+#: taggerform.pas:531
 msgid "BPM"
 msgstr "BPM"
 
-#: taggerform.pas:1868
+#: taggerform.pas:1881
 msgid "BPM „%s“ bei %s ist ungültig. Bitte eine ganze Zahl von %d bis %d eingeben oder das Feld leeren."
 msgstr "BPM「%s」(%s) は無効です。%d から %d までの整数を入力するか、空欄にしてください。"
 
-#: taggerform.pas:1745
+#: taggerform.pas:1758
 msgid "Beim Laden wird nichts verändert. In die Dateien geschrieben wird erst mit „Speichern“, und nur bei Dateien mit Änderungen."
 msgstr "読み込みでは何も変更しません。ファイルに書き込むのは「保存」を押したときだけで、変更のあるファイルのみです。"
 
-#: taggerform.pas:829
+#: taggerform.pas:836
 msgid "Benachbarte Zahlen passen beim Mixen gut zusammen (z.B. 8A zu 7A, 9A und 8B)."
 msgstr "隣り合う数字同士はミックスの相性が良いです (例: 8A と 7A、9A、8B)。"
 
-#: taggerform.pas:768
+#: taggerform.pas:775
 msgid "Bild aus der Zwischenablage einfügen (Strg+V)"
 msgstr "クリップボードから画像を貼り付け (Ctrl+V)"
 
-#: taggerform.pas:1830
+#: taggerform.pas:1843
 msgid "Bild kann nicht gelesen werden:%s%s"
 msgstr "画像を読み込めません:%s%s"
 
-#: taggerform.pas:764
+#: taggerform.pas:771
 msgid "Bild..."
 msgstr "画像..."
 
-#: taggerform.pas:2163
+#: taggerform.pas:2182
 msgid "Bilder"
 msgstr "画像"
 
-#: taggerform.pas:529 taggerform.pas:853
+#: taggerform.pas:536 taggerform.pas:860
 msgid "Cover"
 msgstr "カバー"
 
-#: taggerform.pas:2269
+#: taggerform.pas:2288
 msgid "Cover speichern"
 msgstr "カバーを保存"
 
-#: taggerform.pas:2162
+#: taggerform.pas:2181
 msgid "Cover-Bild wählen"
 msgstr "カバー画像を選択"
 
-#: taggerform.pas:2242
+#: udankfenster.pas:96
+msgid "Danke fürs Update auf StemTagger %s!"
+msgstr "StemTagger %s へのアップデートありがとうございます！"
+
+#: taggerform.pas:2261
 msgid "Das Bild aus der Zwischenablage kann nicht gelesen werden."
 msgstr "クリップボードの画像を読み込めません。"
 
-#: taggerform.pas:852
+#: taggerform.pas:859
 msgid "Datei"
 msgstr "ファイル"
 
-#: taggerform.pas:2075
+#: taggerform.pas:2094
 msgid "Dateien öffnen"
 msgstr "ファイルを開く"
 
-#: taggerform.pas:667
+#: taggerform.pas:674
 msgid "Dateien..."
 msgstr "ファイル..."
 
-#: taggerform.pas:714
+#: taggerform.pas:721
 msgid "Die Kopie wird nie überschrieben, sie bleibt also das echte Original."
 msgstr "コピーは上書きされないため、本当のオリジナルとして残ります。"
 
-#: taggerform.pas:828
+#: taggerform.pas:835
 msgid "Die Liste zeigt alle drei, gespeichert wird die klassische (z.B. Am)."
 msgstr "リストには 3 つすべてを表示し、保存するのはクラシック表記 (例: Am) です。"
 
-#: taggerform.pas:1838
+#: taggerform.pas:1851
 msgid "Dieses Bildformat wird nicht unterstützt. Bitte JPEG, PNG, BMP oder GIF verwenden."
 msgstr "この画像形式には対応していません。JPEG、PNG、BMP、GIF を使用してください。"
 
-#: taggerform.pas:876
+#: taggerform.pas:883
 msgid "Doppelklick auf den Rand passt die Spalte an den Text an"
 msgstr "境界をダブルクリックすると列幅を文字に合わせます"
 
-#: taggerform.pas:765
+#: taggerform.pas:772
 msgid "Einfügen"
 msgstr "貼り付け"
 
-#: taggerform.pas:669 taggerform.pas:766
+#: taggerform.pas:676 taggerform.pas:773
 msgid "Entfernen"
 msgstr "削除"
 
-#: taggerform.pas:816
+#: taggerform.pas:823
 msgid "Erscheinungsjahr, z.B. 2016"
 msgstr "リリース年 (例: 2016)"
 
-#: taggerform.pas:823
+#: taggerform.pas:830
 msgid "Es gibt drei übliche Schreibweisen für dieselbe Tonart:"
 msgstr "同じキーには一般的な表記が 3 つあります:"
 
-#: taggerform.pas:2407
+#: taggerform.pas:2426
 msgid "Es gibt ungespeicherte Änderungen. Jetzt speichern?"
 msgstr "未保存の変更があります。今すぐ保存しますか?"
 
-#: taggerform.pas:2147
+#: taggerform.pas:2166
 msgid "Es gibt ungespeicherte Änderungen. Liste trotzdem leeren?"
 msgstr "未保存の変更があります。それでもリストをクリアしますか?"
 
-#: taggerform.pas:1926
+#: taggerform.pas:1939
 msgid "Fehler: "
 msgstr "エラー: "
 
-#: taggerform.pas:1896
+#: taggerform.pas:1909
 msgid "Fehler: Sicherungskopie nicht möglich"
 msgstr "エラー: バックアップを作成できません"
 
-#: taggerform.pas:831
+#: taggerform.pas:838
 msgid "Freier Text, z.B. Notizen fürs Auflegen"
 msgstr "自由なテキスト (例: DJ プレイ用のメモ)"
 
-#: taggerform.pas:521 taggerform.pas:853
+#: taggerform.pas:528 taggerform.pas:860
 msgid "Genre"
 msgstr "ジャンル"
 
-#: taggerform.pas:1921
+#: taggerform.pas:1934
 msgid "Gespeichert"
 msgstr "保存しました"
 
-#: taggerform.pas:718
+#: taggerform.pas:725
 msgid "Grosse Cover auf %d px verkleinern"
 msgstr "大きなカバーを %d px に縮小"
 
-#: taggerform.pas:682
+#: taggerform.pas:689
 msgid "Hilfe (F1)"
 msgstr "ヘルプ (F1)"
 
-#: taggerform.pas:1408
+#: taggerform.pas:1421
 msgid "Im Ordner wurden keine Stem- oder MP3-Dateien gefunden:%s%s"
 msgstr "フォルダーにステムファイルまたは MP3 ファイルが見つかりませんでした:%s%s"
 
-#: taggerform.pas:2226
+#: taggerform.pas:2245
 msgid "In der Zwischenablage ist kein Bild."
 msgstr "クリップボードに画像がありません。"
 
-#: taggerform.pas:518 taggerform.pas:852
+#: taggerform.pas:525 taggerform.pas:859
 msgid "Interpret"
 msgstr "アーティスト"
 
-#: taggerform.pas:813
+#: taggerform.pas:820
 msgid "Interpret des ganzen Albums, z.B. „Various Artists“ bei Compilations."
 msgstr "アルバム全体のアーティスト (例: コンピレーションの場合は「Various Artists」)。"
 
-#: taggerform.pas:832
+#: taggerform.pas:839
 msgid "Interpret/Titel aus Dateiname"
 msgstr "ファイル名から取得"
 
-#: taggerform.pas:522
+#: taggerform.pas:529
 msgid "Jahr"
 msgstr "年"
 
-#: taggerform.pas:1880
+#: taggerform.pas:1893
 msgid "Jetzt speichern?"
 msgstr "今すぐ保存しますか?"
 
-#: taggerform.pas:700 taggerform.pas:1719
+#: taggerform.pas:707 taggerform.pas:1732 udankfenster.pas:131
 msgid "Kaffee spendieren"
 msgstr "コーヒーをおごる"
 
-#: taggerform.pas:1465
+#: taggerform.pas:1478
 msgid "Keine Stem-Datei"
 msgstr "ステムファイルではありません"
 
-#: taggerform.pas:874
+#: taggerform.pas:881
 msgid "Klick sortiert, nochmal klicken sortiert umgekehrt"
 msgstr "クリックで並べ替え、もう一度クリックで逆順"
 
-#: taggerform.pas:527
+#: taggerform.pas:534
 msgid "Kommentar"
 msgstr "コメント"
 
-#: taggerform.pas:811
+#: taggerform.pas:818
 msgid "Künstler oder Band, z.B. „Kungs“"
 msgstr "アーティストまたはバンド (例: 「Kungs」)"
 
-#: taggerform.pas:526
+#: taggerform.pas:533
 msgid "Label"
 msgstr "レーベル"
 
-#: taggerform.pas:814
+#: taggerform.pas:821
 msgid "Leer lassen, wenn er gleich ist wie der Interpret."
 msgstr "アーティストと同じ場合は空欄のままにしてください。"
 
-#: taggerform.pas:713
+#: taggerform.pas:720
 msgid "Legt vor dem ersten Speichern eine Kopie der Originaldatei an (Name.stem.mp4.bak)."
 msgstr "最初の保存の前に元ファイルのコピー (名前.stem.mp4.bak) を作成します。"
 
-#: taggerform.pas:670
+#: taggerform.pas:677
 msgid "Liste leeren"
 msgstr "リストをクリア"
 
-#: taggerform.pas:1526
+#: taggerform.pas:1539
 msgid "MP3 OK"
 msgstr "MP3 OK"
 
-#: taggerform.pas:1524
+#: taggerform.pas:1537
 msgid "MP3 OK, mit Traktor-Daten"
 msgstr "MP3 OK、Traktor データあり"
 
-#: taggerform.pas:2078
+#: taggerform.pas:2097
 msgid "MP3-Dateien"
 msgstr "MP3 ファイル"
 
-#: taggerform.pas:2079
+#: taggerform.pas:2098
 msgid "MP4-Dateien"
 msgstr "MP4 ファイル"
 
-#: taggerform.pas:815
+#: taggerform.pas:822
 msgid "Musikstil: aus der Liste wählen oder selbst eintippen"
 msgstr "音楽ジャンル: リストから選ぶか、直接入力"
 
-#: taggerform.pas:810
+#: taggerform.pas:817
 msgid "Name des Tracks, z.B. „Clap Your Hands“"
 msgstr "トラック名 (例: 「Clap Your Hands」)"
 
-#: taggerform.pas:1879
+#: taggerform.pas:1892
 msgid "Neu geschrieben werden nur die geänderten Tags, Audio, Stems und Traktor-Daten bleiben unverändert."
 msgstr "書き換えられるのは変更したタグだけで、オーディオ、ステム、Traktor データはそのまま残ります。"
 
-#: taggerform.pas:1442 taggerform.pas:1461 taggerform.pas:1473
+#: taggerform.pas:1455 taggerform.pas:1474 taggerform.pas:1486
 msgid "Nicht lesbar"
 msgstr "読み取れません"
 
-#: taggerform.pas:1750
+#: taggerform.pas:1763
 msgid "Nicht mehr anzeigen"
 msgstr "今後は表示しない"
 
-#: taggerform.pas:817
+#: udankfenster.pas:138
+msgid "Nicht mehr fragen"
+msgstr "今後は表示しない"
+
+#: taggerform.pas:824
 msgid "Nummer auf dem Album, z.B. 3 oder 3/12 (Track 3 von 12)"
 msgstr "アルバム内の番号 (例: 3 または 3/12 = 12 曲中 3 曲目)"
 
-#: taggerform.pas:1448
+#: taggerform.pas:1461
 msgid "Nur lesen (alter oder beschädigter ID3-Tag)"
 msgstr "読み取り専用（古いまたは破損した ID3 タグ）"
 
-#: taggerform.pas:1522
+#: taggerform.pas:1535
 msgid "Ohne Cover"
 msgstr "カバーなし"
 
-#: taggerform.pas:1519
+#: taggerform.pas:1532
 msgid "Ohne Tags"
 msgstr "タグなし"
 
-#: taggerform.pas:1517
+#: taggerform.pas:1530
 msgid "Ohne Tags und Cover"
 msgstr "タグとカバーなし"
 
-#: taggerform.pas:1743
+#: taggerform.pas:1756
 msgid "Ordner geladen"
 msgstr "フォルダーを読み込みました"
 
-#: taggerform.pas:2103
+#: taggerform.pas:2122
 msgid "Ordner mit Stem- oder MP3-Dateien wählen (mit Unterordnern)"
 msgstr "ステムファイルまたは MP3 ファイルのあるフォルダーを選択（サブフォルダーを含む）"
 
-#: taggerform.pas:668
+#: taggerform.pas:675
 msgid "Ordner..."
 msgstr "フォルダー..."
 
-#: taggerform.pas:830
+#: taggerform.pas:837
 msgid "Plattenfirma, die den Track veröffentlicht hat"
 msgstr "トラックをリリースしたレーベル"
 
-#: taggerform.pas:875
+#: taggerform.pas:882
 msgid "Rand zwischen zwei Spalten ziehen ändert die Breite"
 msgstr "2つの列の境界をドラッグすると幅を変更できます"
 
-#: taggerform.pas:712
+#: taggerform.pas:719
 msgid "Sicherungskopie anlegen (.bak)"
 msgstr "バックアップを作成 (.bak)"
 
-#: taggerform.pas:1888
+#: taggerform.pas:1901
 msgid "Speichere %s ..."
 msgstr "%s を保存中 ..."
 
-#: taggerform.pas:679
+#: taggerform.pas:686
 msgid "Speichern"
 msgstr "保存"
 
-#: taggerform.pas:767
+#: taggerform.pas:774
 msgid "Speichern..."
 msgstr "保存..."
 
-#: taggerform.pas:854
+#: taggerform.pas:861
 msgid "Status"
 msgstr "状態"
 
-#: taggerform.pas:1528
+#: taggerform.pas:1541
 msgid "Stem OK (%d Spuren)"
 msgstr "ステム OK (%d トラック)"
 
-#: taggerform.pas:2076
+#: taggerform.pas:2095
 msgid "Stem- und MP3-Dateien"
 msgstr "ステムファイルと MP3 ファイル"
 
-#: taggerform.pas:2077
+#: taggerform.pas:2096
 msgid "Stem-Dateien"
 msgstr "ステムファイル"
 
-#: taggerform.pas:1548
+#: taggerform.pas:1561
 msgid "Stem-Dateien, MP3s oder Ordner hierher ziehen"
 msgstr "ステムファイル、MP3、フォルダーをここにドラッグ"
 
-#: taggerform.pas:818
+#: udankfenster.pas:109
+msgid "StemTagger bleibt gratis, ohne Abo und ohne Werbung. Ich entwickle es in meiner Freizeit, mit viel Zeit und Herzblut."
+msgstr "StemTagger はこれからも無料です。サブスクも広告もありません。私が自由時間に、たくさんの時間と情熱を注いで開発しています。"
+
+#: taggerform.pas:825
 msgid "Tempo in Schlägen pro Minute, nur ganze Zahlen von %d bis %d, z.B. 128."
 msgstr "テンポ (1分あたりの拍数)。%d から %d までの整数のみ (例: 128)。"
 
-#: taggerform.pas:517 taggerform.pas:852
+#: taggerform.pas:524 taggerform.pas:859
 msgid "Titel"
 msgstr "タイトル"
 
-#: taggerform.pas:525
+#: taggerform.pas:532
 msgid "Tonart"
 msgstr "キー"
 
-#: taggerform.pas:821
+#: taggerform.pas:828
 msgid "Tonart des Tracks: aus der Liste wählen oder selbst eintippen."
 msgstr "トラックのキー: リストから選ぶか、直接入力してください。"
 
-#: taggerform.pas:523
+#: taggerform.pas:530
 msgid "Track-Nr."
 msgstr "トラック番号"
 
-#: taggerform.pas:854
+#: taggerform.pas:861
 msgid "Traktor"
 msgstr "Traktor"
 
-#: taggerform.pas:820
+#: taggerform.pas:827
 msgid "Traktor misst das Tempo beim Analysieren ohnehin selbst."
 msgstr "Traktor は解析時にテンポを自分で測定します。"
 
-#: taggerform.pas:2371
+#: udankfenster.pas:114
+msgid "Und wenn nicht, ist das völlig in Ordnung. Viel Spass beim Auflegen!"
+msgstr "もちろん、しなくてもまったく問題ありません。DJ を楽しんでください!"
+
+#: udankfenster.pas:125
+msgid "Weiter"
+msgstr "続ける"
+
+#: udankfenster.pas:112
+msgid "Wenn StemTagger dir Zeit spart, hilft ein Kaffee, dass es weitergeht."
+msgstr "StemTagger で時間が節約できたなら、コーヒー一杯が開発を続ける力になります。"
+
+#: taggerform.pas:2390
 msgid "Zuerst die Dateien markieren, die dieses Cover bekommen sollen."
 msgstr "まず、このカバーを付けるファイルを選択してください。"
 
-#: taggerform.pas:1510
+#: taggerform.pas:1523
 msgid "geändert"
 msgstr "変更あり"
 
-#: taggerform.pas:1498 taggerform.pas:1504
+#: taggerform.pas:1511 taggerform.pas:1517
 msgid "ja"
 msgstr "はい"
 
-#: taggerform.pas:1769
+#: taggerform.pas:1782
 msgid "kein Cover"
 msgstr "カバーなし"
 
-#: taggerform.pas:678
+#: taggerform.pas:685
 msgid "Änderungen verwerfen"
 msgstr "変更を破棄"
 
